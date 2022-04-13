@@ -1,0 +1,207 @@
+/* pages/caseDetail/caseDetail.wxss */
+.nav {
+    width: 100%;
+    height: 90rpx;
+    display: flex;
+}
+
+.nav>text {
+    font-size: 30rpx;
+    padding: 20rpx 10rpx;
+}
+
+.nav>text:first-child {
+    margin: auto 40rpx auto auto;
+}
+
+.nav>text:last-child {
+    margin: auto auto auto 40rpx;
+}
+
+.select-nav {
+    color: #1780f3;
+    border-bottom: 4rpx solid #1780f3;
+    box-sizing: border-box;
+    font-weight: bold;
+}
+
+.box {
+    height: calc(100% - 90rpx - 80rpx - 80rpx - 26rpx );
+}
+
+.main {
+    padding: 0 30rpx;
+}
+
+/* 案件 */
+
+.flex {
+    display: flex;
+}
+
+.title {
+    border-left: 4rpx solid #1780f3;
+    padding-left: 20rpx;
+    font-size: 30rpx;
+    color: #707070;
+}
+
+.flex>text:nth-child(2) {
+    margin-left: auto;
+    font-size: 30rpx;
+    color: #1780f3;
+}
+
+.content {
+    padding: 20rpx;
+    box-shadow: 4rpx 4rpx 6rpx 2rpx rgba(0, 0, 0, 0.4);
+    margin: 20rpx 0 40rpx 0;
+    border-radius: 6rpx;
+}
+
+.text {
+    border-bottom: 2rpx solid #c4c4c4;
+    display: flex;
+}
+
+.text>.left {
+    width: 205rpx;
+    box-sizing: border-box;
+    border-right: 2rpx solid #c4c4c4;
+}
+
+.text>.right {
+    width: 445rpx;
+}
+
+.text>.right>input {
+    width: 100%;
+    text-align: left;
+    color: #101010;
+}
+
+.text>view {
+    padding: 12rpx 10rpx;
+    word-break: break-all;
+    font-size: 25rpx;
+    color: #646d6f;
+}
+
+
+.states {
+    width: 100%;
+    display: flex;
+}
+
+.states>view {
+    width: calc(100% / 3);
+    height: 80rpx;
+    display: flex;
+}
+
+.states .check {
+    width: 32rpx;
+    height: 32rpx;
+    border-radius: 5rpx;
+    border: 2rpx solid #969696;
+    margin: auto 20rpx auto auto;
+    box-sizing: border-box;
+}
+
+.states .state {
+    font-size: 28rpx;
+    margin: auto auto auto 0;
+}
+
+.icon-xuanzhong1 {
+    font-size: 32rpx;
+    margin: auto 20rpx auto auto;
+    border-radius: 5rpx;
+    color: #1780f3;
+}
+
+.data {
+    border-top: 2rpx solid #d8d8d8;
+    width: 100%;
+    display: flex;
+    height: 90rpx;
+}
+
+.data .left {
+    margin: auto 0;
+    font-size: 28rpx;
+    color: #707070;
+}
+
+.data .right {
+    margin: auto 0 auto auto;
+    font-size: 28rpx;
+    color: #707070;
+    display: flex;
+}
+
+.r-text {
+    max-width: 450rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.icon-jiantoudown,
+.icon-xiangji {
+    margin-left: 20rpx;
+    color: #707070;
+}
+
+.icon-xiangji {
+    margin-top: 6rpx;
+}
+
+.center {
+    font-size: 28rpx;
+    margin: auto 0 auto 100rpx;
+    color: #707070;
+}
+
+.right input {
+    font-size: 28rpx;
+    width: 240rpx;
+    text-align: right;
+}
+
+/* 材料 */
+
+.item {
+    width: 50%;
+    display: inline-block;
+    margin-top: 40rpx;
+}
+
+.item .img-box {
+    width: 165rpx;
+    height: 165rpx;
+    border: 2rpx solid #bbbbbb;
+    margin: auto;
+}
+
+
+.btn-box {
+    margin-bottom: 26rpx;
+}
+
+.btn-box .btn {
+    font-weight: normal;
+    color: #ffffff;
+    margin: 40rpx auto !important;
+    padding-top: 0;
+    padding-bottom: 0;
+    line-height: 80rpx;
+}
+
+.up {
+    background-color: #1780f3;
+}
+
+.add {
+    background-color: #15a23e;
+}

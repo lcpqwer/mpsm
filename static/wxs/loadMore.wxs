@@ -1,0 +1,16 @@
+var text = function(state){
+    if (state == 'More'){
+        return '上拉加载更多'
+    }else if (state == 'Loading'){
+        return '加载中..'
+    }else if (state == 'noMore'){
+        return '我是有底线的~'
+    }else if (state == 'Error'){
+        return '加载出错，点击重新加载'
+    }else if (state == 'Empty'){
+        return '暂无数据~'
+    }
+}
+module.exports = {
+    text: text
+}

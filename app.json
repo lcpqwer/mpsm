@@ -1,0 +1,29 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/uploadRecord/uploadRecord",
+    "pages/changeRecord/changeRecord",
+    "pages/caseDetail/caseDetail",
+    "pages/success/success",
+    "pages/matchCase/matchCase",
+    "pages/confirmPhotos/confirmPhotos",
+    "pages/login/login",
+    "pages/caseMater/caseMater",
+    "pages/takePhoto/takePhoto",
+    "pages/logs/logs",
+    "pages/user/user",
+    "pages/phone/phone",
+    "pages/smsCode/smsCode"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1780f3",
+    "navigationBarTitleText": "材料入库",
+    "navigationBarTextStyle": "white"
+  },
+  "usingComponents": {
+    "sImage": "/components/sImage/sImage"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

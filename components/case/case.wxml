@@ -1,0 +1,16 @@
+<!--components/case/case.wxml-->
+<view class="case-box" bindtap="detail">
+    <view>
+        <text>2020年11月04日</text>
+        <text>来源：<text class="color1">某某某公司</text></text>
+    </view>
+    <view>
+        <text>涉案人员：张三、李四、王二</text>
+        <text>材料数量：13份</text>
+    </view>
+    <view>
+        <text>案件ID：sadasdadadasdasd</text>
+        <text>负责人：张三</text>
+    </view>
+    <text class="state state1">已入库</text>
+</view>

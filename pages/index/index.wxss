@@ -1,0 +1,52 @@
+/**index.wxss**/
+.box {
+	width: 100%;
+	height: calc(100% - 100rpx - env(safe-area-inset-bottom));
+}
+
+.tab-bar {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100rpx;
+	background: #1780f3;
+	display: flex;
+	padding-bottom: env(safe-area-inset-bottom);
+}
+
+.tab-height {
+	height: 100rpx;
+	padding-bottom: env(safe-area-inset-bottom);
+}
+
+.tab-bar-item {
+	width: calc(100% / 3);
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}
+
+.tab-bar-item .iconfont {
+	font-size: 56rpx;
+	margin: auto auto 0 auto;
+}
+
+.tab-bar-item .text{
+	font-size: 20rpx;
+	margin: auto;
+}
+
+.icon-jia {
+	font-size: 80rpx !important;
+	color: #fcff00;
+	margin: auto !important;
+}
+
+.color1 {
+    color: #ffffff;
+}
+
+.color2 {
+    color: #cbcbcb;
+}

@@ -1,0 +1,38 @@
+/* pages/phone/phone.wxss */
+page {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav {
+    margin:180rpx 0 0  85rpx;
+    font-size: 38rpx;
+    color: #636363;
+}
+
+.phone {
+    padding: 0 85rpx;
+    display: flex;
+    margin-top: 180rpx;
+}
+
+.phone>text {
+    font-size: 34rpx;
+    margin: auto 0;
+}
+
+.phone>input {
+    width: 450rpx;
+    margin-left: auto;
+    height: 60rpx;
+    border-bottom: 1px solid #9c5151;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+}
+
+button {
+    margin-top: 220rpx;
+    font-weight: normal !important;
+    background-color: #00a936;
+    color: #ffffff;
+}

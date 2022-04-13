@@ -1,0 +1,37 @@
+<!--pages/caseMater/caseMater.wxml-->
+<view class="box1">
+    <view class="search">
+        <view class="case">
+            <view class="search-box">
+                <text class="iconfont icon-search-2-copy"></text>
+            </view>
+            <input type="text" model:value="{{search}}" bindconfirm="search" confirm-type="search" placeholder="案件查找" placeholder-class="pstyle" />
+        </view>
+        <!-- <picker class="picker-date" mode="date" value="{{date?date:'2020-10-01'}}" start="2020-10-01" end="{{endDate}}" bindchange="bindDateChange"> -->
+            <view class="date" bindtap="showPicker">
+                <text class="iconfont icon-xiala"></text>
+                {{date?date:'全部日期'}}
+            </view>
+        <!-- </picker> -->
+        <picker class="picker-state" range="{{stateList}}" range-key="name" bindchange="changeState">
+            <view class="picker">
+                <text class="iconfont icon-xiala"></text>
+                {{caseState == '01'?'已入库':caseState == '02'?'已出库':caseState == '03'?'已退回':'全部状态'}}
+            </view>
+        </picker>
+    </view>
+    <block wx:if="{{loginflag}}">
+        <scroll-view class="list" scroll-y>
+            <view style="height: 30rpx;"></view>
+            <block wx:for="{{[1,2,1,1,1,1]}}">
+               <case />  
+            </block>
+            <wxs src="/static/wxs/loadMore.wxs" module="loadMore"></wxs>
+            <view bindtap="nextPage" class="load-more">{{loadMore.text(state)}}</view>
+        </scroll-view>
+    </block>
+    <block wx:else>
+       <button class="login" bindtap="login">登录查看</button> 
+    </block>
+</view>
+<picker-date pickerIf="{{pickerIf}}" bind:cancel="hidePicker" bind:confirm="changeDate" />

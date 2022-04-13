@@ -1,0 +1,73 @@
+/* components/case/case.wxss */
+.case-box {
+    width: 710rpx;
+    background-color: #fff;
+    margin: 0 auto 30rpx auto;
+    border-radius: 10rpx;
+    border: 2rpx solid #1780f3;
+    position: relative;
+}
+
+.case-box>view {
+    height: 60rpx;
+    display: flex;
+}
+
+.case-box>view:nth-child(2){
+    height: 70rpx;
+}
+
+.case-box>view>text {
+    font-size: 24rpx;
+    margin-top: auto;
+    margin-bottom: auto;
+    color: #707070;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.case-box>view>text:first-child {
+    width: 290rpx;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    
+}
+
+.case-box>view>text:last-child {
+    max-width: 250rpx;
+}
+
+.color1 {
+    color: #1780F3;
+}
+
+.color2 {
+    color: #E05600;
+}
+
+.color3 {
+    color: #707070;
+}
+
+.state {
+    position: absolute;
+    top: 10rpx;
+    right: 0;
+    font-size: 28rpx;
+    padding: 10rpx 20rpx;
+    color: #ffffff;
+}
+
+.state1 {
+    background-color: #1780F3;
+}
+
+.state2 {
+    background-color: #E05600;
+} 
+
+.state3 {
+    background-color: #707070;
+} 
+

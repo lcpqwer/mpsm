@@ -1,0 +1,24 @@
+/* pages/success/success.wxss */
+page {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.img-box {
+    width: 160rpx;
+    height: 160rpx;
+    margin: 400rpx auto 0 auto;
+}
+
+.text {
+    margin: 30rpx auto 0 auto;
+    color: #000000;
+    font-size: 40rpx;
+}
+
+.time {
+    margin: 80rpx auto 0 auto;
+    color: #969696;
+    font-size: 30rpx;
+}

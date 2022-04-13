@@ -1,0 +1,9 @@
+<!--pages/success/success.wxml-->
+<block wx:if="{{state}}">
+    <view class="img-box">
+        <sImage src="/static/image/{{state == '1'?'success1':state == '2'?'success2':'success3'}}.png"
+            mode="aspectFill" />
+    </view>
+    <text class="text">{{state == '1'?'入库成功':state == '2'?'出库成功':'退回成功'}}</text>
+    <text class="time">2020年04月21日 13:44</text>
+</block>

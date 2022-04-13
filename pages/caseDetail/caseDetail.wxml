@@ -1,0 +1,195 @@
+<!--pages/caseDetail/caseDetail.wxml-->
+<view class="nav">
+    <text class="{{nav == '1'?'select-nav':''}}" bindtap="chooseNav" data-nav="1">案件</text>
+    <text class="{{nav == '2'?'select-nav':''}}" bindtap="chooseNav" data-nav="2">材料</text>
+</view>
+<scroll-view class="box" scroll-y="{{true}}" wx:if="{{nav == '1'}}">
+    <view class="main">
+        <text class="title">案件详情</text>
+        <block wx:if="{{type == 'detail'}}">
+            <view class="content">
+                <view class="text">
+                    <view class="left"><text>案件编号</text></view>
+                    <view class="right"><text>aj-121212121</text></view>
+                </view>
+                <view class="text">
+                    <view class="left"><text>合同编号</text></view>
+                    <view class="right"><text>ht-2021212121212</text></view>
+                </view>
+                <view class="text">
+                    <view class="left"><text>当事人</text></view>
+                    <view class="right"><text>张三</text></view>
+                </view>
+                <view class="text">
+                    <view class="left"><text>当事人证件号</text></view>
+                    <view class="right"><text>412314111987654322</text></view>
+                </view>
+                <view class="text">
+                    <view class="left"><text>申请人</text></view>
+                    <view class="right"><text>李四</text></view>
+                </view>
+                <view class="text">
+                    <view class="left"><text>申请人证件号</text></view>
+                    <view class="right"><text>567827651489119202</text></view>
+                </view>
+                <view class="text">
+                    <view class="left"><text>案件类型</text></view>
+                    <view class="right"><text>借贷</text></view>
+                </view>
+                <view class="text">
+                    <view class="left"><text>司法机构类型</text></view>
+                    <view class="right"><text>公证处</text></view>
+                </view>
+                <view class="text">
+                    <view class="left"><text>司法机构名称</text></view>
+                    <view class="right"><text>上海公证处</text></view>
+                </view>
+                <view class="text">
+                    <view class="left"><text>委托律所</text></view>
+                    <view class="right"><text>上海律所</text></view>
+                </view>
+                <view class="text">
+                    <view class="left"><text>委托律师</text></view>
+                    <view class="right"><text>王二</text></view>
+                </view>
+                <view class="text">
+                    <view class="left"><text>涉及金额</text></view>
+                    <view class="right"><text>1500.00</text></view>
+                </view>
+            </view>
+        </block>
+        <block wx:else>
+            <view class="content">
+                <view class="text">
+                    <view class="left"><text>合同编号</text></view>
+                    <view class="right"><input type="text" placeholder="填写合同编号" /></view>
+                </view>
+                <view class="text">
+                    <view class="left"><text>当事人</text></view>
+                    <view class="right"><input type="text" placeholder="填写当事人姓名" /></view>
+                </view>
+                <view class="text">
+                    <view class="left"><text>当事人证件号</text></view>
+                    <view class="right"><input type="idcard" placeholder="填写当事人证件号" /></view>
+                </view>
+                <view class="text">
+                    <view class="left"><text>申请人</text></view>
+                    <view class="right"><input type="text" placeholder="填写申请人姓名" /></view>
+                </view>
+                <view class="text">
+                    <view class="left"><text>申请人证件号</text></view>
+                    <view class="right"><input type="idcard" placeholder="填写申请人证件号" /></view>
+                </view>
+                <view class="text">
+                    <view class="left"><text>案件类型</text></view>
+                    <view class="right">
+                        <picker>
+                            
+                        </picker>
+                    </view>
+                </view>
+                <view class="text"> 
+                    <view class="left"><text>司法机构类型</text></view>
+                    <view class="right">
+                        
+                    </view>
+                </view>
+                <view class="text">
+                    <view class="left"><text>司法机构名称</text></view>
+                    <view class="right"><input type="text" placeholder="填写司法机构名称" /></view>
+                </view>
+                <view class="text">
+                    <view class="left"><text>委托律所</text></view>
+                    <view class="right">
+                        
+                    </view>
+                </view>
+                <view class="text">
+                    <view class="left"><text>委托律师</text></view>
+                    <view class="right">
+                        
+                    </view>
+                </view>
+                <view class="text">
+                    <view class="left"><text>涉及金额</text></view>
+                    <view class="right"><input type="digit" placeholder="请填写涉及金额" /></view>
+                </view>
+            </view>
+        </block>
+        <view class="flex">
+            <text class="title">材料状态设置</text>
+            <block wx:if="{{type == 'detail'}}">
+                <text bindtap="next" data-url="/pages/changeRecord/changeRecord">变更记录</text>
+            </block>
+        </view>
+        <view class="content">
+            <view class="states">
+                <view bindtap="{{type == 'detail'?'changeState':''}}" data-state="1">
+                    <text class="iconfont icon-xuanzhong1" wx:if="{{state == '1' || type == 'add'}}"></text>
+                    <view class="check" wx:else></view>
+                    <text class="state">入库</text>
+                </view>
+                <block wx:if="{{type == 'detail'}}">
+                    <view bindtap="changeState" data-state="2">
+                        <text class="iconfont icon-xuanzhong1" wx:if="{{state == '2'}}"></text>
+                        <view class="check" wx:else></view>
+                        <text class="state">出库</text>
+                    </view>
+                    <view bindtap="changeState" data-state="3">
+                        <text class="iconfont icon-xuanzhong1" wx:if="{{state == '3'}}"></text>
+                        <view class="check" wx:else></view>
+                        <text class="state">退回</text>
+                    </view>
+                </block>
+            </view>
+            <block wx:if="{{state == '1' || type == 'add'}}">
+                <view class="data">
+                    <view class="left">寄件人</view>
+                    <view class="right"><text class="r-text">XXXX公司/张三XXXX公司/张三XXXX公司/张三XXXX公司/张三XXXX公司/张三</text><text
+                            class="iconfont icon-jiantoudown"></text></view>
+                </view>
+            </block>
+            <block wx:elif="{{state == '2'}}">
+                <view class="data">
+                    <view class="left">收件律师</view>
+                    <view class="right"><text class="r-text">XXXX律所/张三</text><text
+                            class="iconfont icon-jiantoudown"></text></view>
+                </view>
+                <view class="data">
+                    <view class="left">快递公司</view>
+                    <view class="center"><text>选择</text><text class="iconfont icon-jiantoudown"></text></view>
+                    <view class="right"><input type="text" placeholder="快递单号" /><text
+                            class="iconfont icon-xiangji"></text></view>
+                </view>
+            </block>
+            <block wx:elif="{{state == '3'}}">
+                <view class="data">
+                    <view class="left">收件公司</view>
+                    <view class="right"><text class="r-text">XXXXX公司</text><text
+                            class="iconfont icon-jiantoudown"></text></view>
+                </view>
+                <view class="data">
+                    <view class="left">快递公司</view>
+                    <view class="center"><text>选择</text><text class="iconfont icon-jiantoudown"></text></view>
+                    <view class="right"><input type="text" placeholder="快递单号" /><text
+                            class="iconfont icon-xiangji"></text></view>
+                </view>
+            </block>
+        </view>
+    </view>
+</scroll-view>
+<scroll-view class="box" scroll-y="{{true}}" wx:else>
+    <block wx:for="{{list}}">
+        <view class="item">
+            <view class="img-box">
+                <sImage src="{{item}}" mode="aspectFill" />
+            </view>
+        </view>
+    </block>
+
+</scroll-view>
+<view class="btn-box">
+    <button wx:if="{{type == 'add'}}" class="btn up" bindtap="upLoad">提交</button>
+    <button wx:elif="{{nav == '1'}}" class="btn up" bindtap="update">更新</button>
+    <button wx:else="{{nav == '1'}}" class="btn add" bindtap="add">新增</button>
+</view>

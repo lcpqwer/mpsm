@@ -1,0 +1,98 @@
+/* pages/user/user.wxss */
+.head {
+    width: 100%;
+    height: 228rpx;
+    background-color: #1780f3;
+    display: flex;
+}
+
+.head .img-box {
+    width: 112rpx;
+    height: 112rpx;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: auto 45rpx auto 60rpx;
+}
+
+.head button {
+    background-color: transparent;
+    height: 60rpx;
+    font-size: 30rpx;
+    line-height: 60rpx;
+    font-weight: normal;
+    margin: auto 0;
+    padding: 0;
+    text-align: left;
+    color: #ffffff;
+}
+
+.head text {
+    height: 60rpx;
+    font-size: 30rpx;
+    line-height: 60rpx;
+    margin: auto 0;
+    color: #ffffff;
+}
+
+.data {
+    height: 140rpx;
+    padding-bottom: 30rpx;
+    display: flex;
+    background-color: #1780f3;
+}
+
+.data-item {
+    width: calc(100% / 3);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.data .iconfont {
+    font-size: 50rpx;
+    margin: 20rpx auto;
+}
+
+.data text {
+    font-size: 30rpx;
+    color: #ffffff;
+    margin: auto;
+}
+
+.con-checkIn-qianru {
+    color: #b4ff00 !important;
+}
+
+.icon-tuichu {
+    color: #fcff00 !important;
+}
+
+.icon-daochu1 {
+    color: #ff0000 !important;
+}
+
+.navTo {
+    height: 100rpx;
+    width: 680rpx;
+    border-bottom: 2rpx solid #bbbbbb;
+    margin: 0 auto;
+    display: flex;
+}
+
+.icon-dingdanjilu {
+    font-size: 48rpx;
+    margin: auto 0;
+    color: #1079f2;
+}
+
+.icon-jiantou {
+    font-size: 48rpx;
+    margin: auto 0 auto auto;
+    color: #aaaaaa;
+}
+
+.navTo .text {
+    font-size: 30rpx;
+    margin: auto 0 auto 20rpx;
+    color: #7a7a7a;
+}

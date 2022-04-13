@@ -1,0 +1,43 @@
+<!--pages/changeRecord/changeRecord.wxml-->
+<view class="box">
+    <view class="main">
+        <view class="item">
+            <view class="right">
+                <view class="top">
+                    <text>2020年11月10日</text>
+                    <text class="state color1">入库</text>
+                </view>
+                <view class="text">
+                    <text>某某公司寄件13份</text>
+                </view>
+                <view class="text"><text>操作员：张三</text></view>
+            </view>
+        </view>
+        <view class="item">
+            <view class="right">
+                <view class="top">
+                    <text>2020年11月10日</text>
+                    <text class="state color2">出库</text>
+                </view>
+                <view class="text">
+                    <text>寄给某某律师</text>
+                </view>
+                <view class="text"><text>顺丰 adadadadadadad</text></view>
+                <view class="text"><text>操作员：张三</text></view>
+            </view>
+        </view>
+        <view class="item">
+            <view class="right">
+                <view class="top">
+                    <text>2020年11月10日</text>
+                    <text class="state color3">退回</text>
+                </view>
+                <view class="text">
+                    <text>退回某某公司</text>
+                </view>
+                <view class="text"><text>顺丰 adadadadadadad</text></view>
+                <view class="text"><text>操作员：张三</text></view>
+            </view>
+        </view>
+    </view>
+</view>

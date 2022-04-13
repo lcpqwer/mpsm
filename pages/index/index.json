@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "caseMater": "/pages/caseMater/caseMater",
+    "user": "/pages/user/user" 
+  },
+  "navigationBarTitleText": "案件"
+}

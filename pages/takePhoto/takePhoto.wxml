@@ -1,0 +1,35 @@
+<!--pages/takePhoto/takePhoto.wxml-->
+<view class="camera-box">
+    <camera bindinitdone="cameraDone" class="camera" device-position="back" flash="off" binderror="error" style="width: 100%; height: 100%;">
+    </camera>
+</view>
+<scroll-view class="list" scroll-x>
+    <block wx:if="{{list.length == 0}}">
+        <text>暂无图片</text>
+    </block>
+    <block wx:else>
+        <view style="width: {{list.length * 172}}rpx;height: 100%;">
+            <block wx:for="{{list}}">
+                <view class="img-box" bindtap="preview" data-path="{{item}}">
+                    <sImage src="{{item}}" mode="aspectFit" />
+                    <text class="iconfont icon-cuowu1" catchtap="del" data-index="{{index}}"></text>
+                </view>
+            </block>
+        </view>
+    </block>
+</scroll-view>
+<view class="bottom">
+    <view>
+        <view class="next" bindtap="next">
+            <text>下一步</text>
+        </view>
+        <view class="btn">
+            <view bindtap="takePhoto">
+                <view></view>
+            </view>
+        </view>
+        <view class="album" bindtap="chooseImage">
+            <text>相册</text>
+        </view>
+    </view>
+</view>

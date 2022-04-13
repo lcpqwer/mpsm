@@ -1,0 +1,93 @@
+/* pages/takePhoto/takePhoto.wxss */
+.camera-box {
+    padding: 20rpx;
+    height: calc(100% - 226rpx - 176rpx - 60rpx - 40rpx);
+}
+
+.camera {
+    width: 100%;
+}
+
+page {
+    width: 100%;
+    height: 100%;
+}
+
+.list {
+    width: 100%;
+    padding: 0 25rpx;
+    height: 206rpx;
+    overflow: auto;
+    margin-bottom: 30rpx;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 206rpx;
+    color: #a3a3a3;
+}
+
+.img-box {
+    width: 132rpx;
+    height: 176rpx;
+    position: relative;
+    margin-top: 30rpx;
+    margin-right: 40rpx;
+    display: inline-block;
+}
+
+.img-box .icon-cuowu1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    color: #C30707;
+    font-size: 40rpx;
+}
+
+.bottom {
+    width: 100%;
+    height: 226rpx;
+    background-color: #1780f3;
+}
+
+.bottom>view {
+    width: 100%;
+    height: 200rpx;
+    display: flex;
+}
+
+.bottom>view>view {
+    width: calc(100% / 3);
+    display: flex;
+}
+
+.bottom text {
+    display: flex;
+    font-size: 38rpx;
+    margin: auto;
+}
+
+.next>text {
+    color: #ffffff;
+}
+
+.album>text {
+    color: #FF2828;
+}
+
+.btn>view {
+    width: 135rpx;
+    height: 135rpx;
+    border-radius: 50%;
+    background-color: #ffffff;
+    margin: auto;
+    display: flex;
+}
+
+.btn>view>view {
+    width: 118rpx;
+    height: 118rpx;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border: 8rpx solid #1780f3;
+    margin: auto;
+}

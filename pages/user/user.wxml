@@ -1,0 +1,33 @@
+<!--pages/user/user.wxml-->
+<view class="box1">
+    <view class="head">
+        <view class="img-box">
+            <sImage src="{{userInfo?userInfo.avatarUrl:'/static/image/head.png'}}" mode="widthFix" />
+        </view>
+        <block wx:if="{{userInfo}}">
+            <text>{{userInfo.nickName}}</text>
+        </block>
+        <block wx:else>
+            <button bindtap="getUserProfile">获取头像昵称</button>
+        </block>
+    </view>
+    <view class="data">
+        <view class="data-item">
+            <text class="iconfont icon-checkIn-qianru"></text>
+            <text>100</text>
+        </view>
+        <view class="data-item">
+            <text class="iconfont icon-tuichu"></text>
+            <text>100</text>
+        </view>
+        <view class="data-item">
+            <text class="iconfont icon-daochu1"></text>
+            <text>100</text>
+        </view>
+    </view>
+    <view class="navTo" bindtap="next" data-url="/pages/uploadRecord/uploadRecord">
+        <text class="iconfont icon-dingdanjilu"></text>
+        <text class="text">材料上传记录</text>
+        <text class="iconfont icon-jiantou"></text>
+    </view>
+</view>

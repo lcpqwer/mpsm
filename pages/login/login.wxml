@@ -1,0 +1,13 @@
+<!--pages/login/login.wxml-->
+<view class="box">
+    <text class="icon-peijianrukutongji iconfont"></text>
+    <text class="text">材料入库</text>
+    <view class="login">
+        <view class="wechat">
+            <text class="iconfont icon-weixin"></text>
+            <text>微信账号快捷登录</text>
+            <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"></button>
+        </view>
+        <text class="phone" bindtap="smsLogin">手机短信验证码登录</text>
+    </view>
+</view>

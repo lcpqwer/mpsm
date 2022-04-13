@@ -1,0 +1,77 @@
+/* pages/uploadRecord/uploadRecord.wxss */
+.box {
+    padding-top: 20rpx;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+picker {
+    height: 90rpx;
+    padding: 0 20rpx;
+    background-color: #ffeabb;
+}
+
+.picker {
+    display: flex;
+    font-size: 30rpx;
+    height: 90rpx;
+    padding: 0 20rpx;
+    background-color: #ffeabb;
+}
+
+.picker text {
+    margin: auto 0;
+}
+.picker text:first-child {
+    color: #1780f3;
+    margin-right: auto !important;
+}
+
+.num {
+    margin: auto !important;
+}
+
+.numText {
+    color: #DD4B39 !important;
+}
+
+.main {
+    height: calc(100% - 90rpx);
+    overflow: auto;
+    padding-top: 20rpx;
+    box-sizing: border-box;
+}
+
+.item {
+    width: 700rpx;
+    padding: 20rpx;
+    background-color: #ffffff;
+    border-radius: 10rpx;
+    box-shadow: 4rpx 4rpx 6rpx 2rpx rgba(0, 0, 0, 0.4);
+    margin: 0 auto 40rpx auto;
+    box-sizing: border-box;
+}
+
+.title {
+    font-size: 26rpx;
+    display: flex;
+}
+
+.title>.time {
+    width: 300rpx;
+    margin-right: 70rpx;
+}
+
+.img-box {
+    width: 135rpx;
+    height: 150rpx;
+    background-color: #e8e8e8;
+    border-radius: 10rpx;
+    margin-top: 30rpx;
+    margin-right: 40rpx;
+    display: inline-block;
+}
+
+.item>.img-box:nth-child(4n+1){
+    margin-right: 0;
+}

@@ -1,0 +1,18 @@
+<!--pages/confirmPhotos/confirmPhotos.wxml-->
+<view class="box">
+    <view class="list">
+        <view wx:if="{{list.length == 0}}" class="empty"><text>暂无图片</text></view>
+        <block wx:for="{{list}}">
+            <view class="item">
+                <view class="img-box" bindtap="preview" data-path="{{item}}">
+                    <sImage src="{{item}}" mode="aspectFill" />
+                </view>
+                <text class="iconfont icon-cuowu1" catchtap="del" data-index="{{index}}"></text>
+            </view>
+        </block>
+    </view>
+</view>
+<view class="btn-box">
+    <button class="btn next" bindtap="next">下一步</button>
+    <button class="btn add" bindtap="add">新增</button>
+</view>

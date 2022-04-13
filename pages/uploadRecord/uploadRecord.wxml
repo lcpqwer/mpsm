@@ -1,0 +1,29 @@
+<!--pages/uploadRecord/uploadRecord.wxml-->
+<view class="box">
+    <!-- <picker mode="date" value="{{date?date:'2020-10-01'}}" start="2020-10-01" end="{{endDate}}" bindchange="bindDateChange"> -->
+    <view class="picker" bindtap="showPicker">
+        <text class="nav">日期选择</text>
+        <block>
+            <text class="date">{{date}}</text>
+            <text class="num"><text class="numText">{{num}}</text>条</text>
+        </block>
+        <text class="iconfont icon-jiantou"></text>
+    </view>
+    <!-- </picker> -->
+    <scroll-view class="main" scroll-y="{{true}}">
+        <block wx:for="{{[1,1,1,1,1,1,1]}}">
+            <view class="item">
+                <view class="title">
+                    <text class="time">2021年04月20日 13:20</text>
+                    <text>当事人：张三、李四</text>
+                </view>
+                <block wx:for="{{[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]}}">
+                    <view class="img-box">
+
+                    </view>
+                </block>
+            </view>
+        </block>
+    </scroll-view>
+</view>
+<picker-date pickerIf="{{pickerIf}}" bind:cancel="hidePicker" bind:confirm="changeDate" />

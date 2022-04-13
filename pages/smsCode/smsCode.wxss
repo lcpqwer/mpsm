@@ -1,0 +1,42 @@
+/* pages/smsCode/smsCode.wxss */
+.title {
+    padding-top: 180rpx;
+    padding-left: 100rpx;
+}
+
+.main {
+    padding: 0 100rpx;
+    margin-top: 120rpx;
+    display: flex;
+}
+
+.item {
+    width: 90rpx;
+    height: 90rpx;
+    border: 1px solid #bc4444;
+    margin-left: auto;
+    text-align: center;
+    font-size: 50rpx;
+    line-height: 90rpx;
+}
+
+.item>input {
+    width: 0;
+    height: 0;
+}
+
+.main>.item:first-child {
+    margin-left: 0;
+}
+
+.time {
+    text-align: center;
+    margin-top: 80px;
+    color: red;
+}
+
+.again {
+    text-align: center;
+    margin-top: 80px;
+    color: #585858;
+}

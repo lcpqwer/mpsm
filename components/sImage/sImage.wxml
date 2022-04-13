@@ -1,0 +1,2 @@
+<!--components/sIamg/sImage.wxml-->
+<image class="img" src="{{src}}" mode="{{mode}}" bindload="show" style="display: {{show?'':'none'}}"></image>

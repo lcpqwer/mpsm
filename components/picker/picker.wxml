@@ -1,0 +1,67 @@
+<block wx:if="{{sys == 'ios'}}">
+    <view class="birthBox ios" style="display: {{pickerIf == '1'?'':'none'}}" bindtap="cancel">
+        <view class="main" catchtap="noThing">
+            <view class="top">
+                <text class="cancel" catchtap="cancel">取消</text>
+                <text class="confirm" catchtap="confirm">确认</text>
+            </view>
+            <picker-view indicator-style="height:30px;" indicator-class="indicator" mask-style="z-index: 0;"
+                wx:if="{{years.length>0 && months.length>0 && days.length>0}}" bindchange="bindChange">
+                <picker-view-column class="first">
+                    <view class="picker-item" wx:for="{{years}}" wx:key="{{index}}">
+                        <text>{{item}}{{index != 0?'年':''}}</text></view>
+                </picker-view-column>
+                <picker-view-column>
+                    <block wx:if="{{yearIndex != 0}}">
+                        <view class="picker-item" wx:for="{{months}}" wx:key="{{index}}"><text>{{item}}月</text></view>
+                    </block>
+                    <block wx:else>
+                        <view class="picker-item"><text>全部日期</text></view>
+                    </block>
+                </picker-view-column>
+                <picker-view-column class="last">
+                    <block wx:if="{{yearIndex != 0}}">
+                        <view class="picker-item" wx:for="{{days}}" wx:key="{{index}}"><text>{{item}}日</text></view>
+                    </block>
+                    <block wx:else>
+                        <view class="picker-item"><text>全部日期</text></view>
+                    </block>
+                </picker-view-column>
+            </picker-view>
+        </view>
+    </view>
+</block>
+<block wx:else>
+    <view class="birthBox android" style="display: {{pickerIf == '1'?'':'none'}}" bindtap="cancel">
+        <view class="main" catchtap="noThing">
+            <view class="top"></view>
+            <picker-view  indicator-style="height:45px;"
+                wx:if="{{years.length>0 && months.length>0 && days.length>0}}" bindchange="bindChange">
+                <picker-view-column>
+                    <view class="picker-item" wx:for="{{years}}" wx:key="{{index}}">
+                        <text>{{item}}{{index != 0?'年':''}}</text></view>
+                </picker-view-column>
+                <picker-view-column>
+                    <block wx:if="{{yearIndex != 0}}">
+                        <view class="picker-item" wx:for="{{months}}" wx:key="{{index}}"><text>{{item}}月</text></view>
+                    </block>
+                    <block wx:else>
+                        <view class="picker-item"><text>全部日期</text></view>
+                    </block>
+                </picker-view-column>
+                <picker-view-column>
+                    <block wx:if="{{yearIndex != 0}}">
+                        <view class="picker-item" wx:for="{{days}}" wx:key="{{index}}"><text>{{item}}日</text></view>
+                    </block>
+                    <block wx:else>
+                        <view class="picker-item"><text>全部日期</text></view>
+                    </block>
+                </picker-view-column>
+            </picker-view>
+            <view class="btn-box">
+                <button class="cancel" catchtap="cancel">取消</button>
+                <button class="confirm" catchtap="confirm">确认</button>
+            </view>
+        </view>
+    </view>
+</block>

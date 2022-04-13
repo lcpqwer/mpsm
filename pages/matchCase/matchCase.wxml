@@ -1,0 +1,42 @@
+<!--pages/matchCase/matchCase.wxml-->
+<view class="box">
+    <view class="search-box">
+        <input type="text" placeholder="请输入案件编号" />
+        <button class="search" bindtap="search" model:value="search">搜索</button>
+    </view>
+    <scroll-view class="list" scroll-y="{{true}}">
+        <block wx:for="{{[1,1,1,1,1,1,1,1,1,1]}}">
+            <view class="item">
+                <view class="radio check"></view>
+                <view class="main">
+                    <view>
+                        <view class="nav">
+                            <text>当事人：</text>
+                        </view>
+                        <view class="text">
+                            <text>张三张</text>
+                        </view>
+                    </view>
+                    <view>
+                        <view class="nav">
+                            <text>合同编号：</text>
+                        </view>
+                        <view class="text">
+                            <text>asdfafsadfasdfasd</text>
+                        </view>
+                    </view>
+                    <view>
+                        <view class="nav">
+                            <text>平台：</text>
+                        </view>
+                        <view class="text">
+                            <text>XXXXXXXXXXXXX公司</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </block>
+        <wxs src="/static/wxs/loadMore.wxs" module="loadMore"></wxs>
+        <view bindtap="nextPage" class="load-more">{{loadMore.text(state)}}</view>
+    </scroll-view>
+</view>
