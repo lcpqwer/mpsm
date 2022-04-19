@@ -20,6 +20,12 @@ Page({
 		
 	},
 
+	next(e){
+		wx.navigateTo({
+		  url: e.currentTarget.dataset.url,
+		})
+	},
+
 	takePhoto(){
 		wx.navigateTo({
 		  url: '/pages/takePhoto/takePhoto',

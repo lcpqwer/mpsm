@@ -24,7 +24,6 @@ Page({
         if (!this.checkPhone()) {
             wx.showToast({
                 title: '手机号格式错误',
-                mask: true,
                 icon: 'none'
             })
             return

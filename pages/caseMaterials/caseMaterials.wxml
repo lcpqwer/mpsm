@@ -1,0 +1,22 @@
+<!--pages/caseMaterials/caseMaterials.wxml-->
+<view class="box">
+    <view class="info">
+        <view>材料寄送商户</view>
+        <view class="picker">
+            <view>
+                <text>选择商户</text>
+            </view>
+            <text class="iconfont icon-jiantoudown"></text>
+        </view>
+    </view>
+    <view class="info">
+        <view>入库材料列表</view>
+        <view class="select">
+            <text>全选</text>
+            <text>取消全选</text>
+        </view>
+    </view>
+    <view class="list">
+        
+    </view>
+</view>

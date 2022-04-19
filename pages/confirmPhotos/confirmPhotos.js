@@ -15,16 +15,23 @@ Page({
     },
 
     del(e) {
-        let index = e.currentTarget.dataset.index;
-        let list = [];
-        let ls = this.data.list;
-        for (let i = 0; i < ls.length; i++) {
-            if (i != index) {
-                list.push(ls[i])
+        wx.showModal({
+            content: '确认删除图片？',
+            success: res => {
+                if (res.confirm){
+                    let index = e.currentTarget.dataset.index;
+                    let list = [];
+                    let ls = this.data.list;
+                    for (let i = 0; i < ls.length; i++) {
+                        if (i != index) {
+                            list.push(ls[i])
+                        }
+                    }
+                    this.setData({
+                        list
+                    })
+                }
             }
-        }
-        this.setData({
-            list
         })
     },
 

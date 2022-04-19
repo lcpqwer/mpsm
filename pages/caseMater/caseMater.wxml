@@ -2,27 +2,26 @@
 <view class="box1">
     <view class="search">
         <view class="case">
+            <input type="text" model:value="{{search}}" bindconfirm="search" confirm-type="search" placeholder="批次号/案件ID/当事人/商户" placeholder-class="pstyle" />
             <view class="search-box">
                 <text class="iconfont icon-search-2-copy"></text>
-            </view>
-            <input type="text" model:value="{{search}}" bindconfirm="search" confirm-type="search" placeholder="案件查找" placeholder-class="pstyle" />
+            </view> 
         </view>
-        <!-- <picker class="picker-date" mode="date" value="{{date?date:'2020-10-01'}}" start="2020-10-01" end="{{endDate}}" bindchange="bindDateChange"> -->
-            <view class="date" bindtap="showPicker">
-                <text class="iconfont icon-xiala"></text>
-                {{date?date:'全部日期'}}
-            </view>
-        <!-- </picker> -->
-        <picker class="picker-state" range="{{stateList}}" range-key="name" bindchange="changeState">
-            <view class="picker">
-                <text class="iconfont icon-xiala"></text>
-                {{caseState == '01'?'已入库':caseState == '02'?'已出库':caseState == '03'?'已退回':'全部状态'}}
-            </view>
-        </picker>
+        <view class="batch">批量流转</view>
+        <block wx:if="{{!accessToken}}">
+            <view class="login-mask" bindtap="login"></view>
+        </block>
     </view>
-    <block wx:if="{{loginflag}}">
+    <view class="state-box">
+        <text class="{{stateIndex == '01'?'select':''}}" data-index="01" bindtap="selectState">全部</text>
+        <text class="{{stateIndex == '02'?'select':''}}" data-index="02" bindtap="selectState">待入库</text>
+        <text class="{{stateIndex == '03'?'select':''}}" data-index="03" bindtap="selectState">已入库</text>
+        <text class="{{stateIndex == '04'?'select':''}}" data-index="04" bindtap="selectState">已出库</text>
+        <text class="{{stateIndex == '05'?'select':''}}" data-index="05" bindtap="selectState">部分出库</text>
+        <text class="{{stateIndex == '06'?'select':''}}" data-index="06" bindtap="selectState">已退件</text>
+    </view>
+    <block wx:if="{{accessToken}}">
         <scroll-view class="list" scroll-y>
-            <view style="height: 30rpx;"></view>
             <block wx:for="{{[1,2,1,1,1,1]}}">
                <case />  
             </block>

@@ -14,15 +14,15 @@
     <view class="data">
         <view class="data-item">
             <text class="iconfont icon-checkIn-qianru"></text>
-            <text>100</text>
+            <text>{{accessToken?100:'--'}}</text>
         </view>
         <view class="data-item">
             <text class="iconfont icon-tuichu"></text>
-            <text>100</text>
+            <text>{{accessToken?100:'--'}}</text>
         </view>
         <view class="data-item">
             <text class="iconfont icon-daochu1"></text>
-            <text>100</text>
+            <text>{{accessToken?100:'--'}}</text>
         </view>
     </view>
     <view class="navTo" bindtap="next" data-url="/pages/uploadRecord/uploadRecord">

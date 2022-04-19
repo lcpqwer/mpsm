@@ -12,9 +12,9 @@
 <view class="tab-bar">
     <view class="tab-bar-item" bindtap="changeSelect" data-index="0">
         <text class="iconfont icon-wenjian {{select == '0'?'color1':'color2'}}"></text>
-        <text class="text {{select == '0'?'color1':'color2'}}">安材</text>
+        <text class="text {{select == '0'?'color1':'color2'}}">案材</text>
     </view>
-    <view class="tab-bar-item" bindtap="takePhoto">
+    <view class="tab-bar-item" bindtap="next" data-url="/pages/searchCase/searchCase">
         <text class="iconfont icon-jia"></text>
     </view>
     <view class="tab-bar-item" bindtap="changeSelect" data-index="1">

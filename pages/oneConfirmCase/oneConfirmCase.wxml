@@ -1,0 +1,62 @@
+<!--pages/oneConfirmCase/oneConfirmCase.wxml-->
+<view class="box">
+    <view class="detail">
+        <view class="content">
+            <view class="text">
+                <view class="left"><text>案件编号</text></view>
+                <view class="right"><text>aj-121212121</text></view>
+            </view>
+            <view class="text">
+                <view class="left"><text>案件类目</text></view>
+                <view class="right"><text>类目1</text></view>
+            </view>
+            <view class="text">
+                <view class="left"><text>合同编号</text></view>
+                <view class="right"><text>ht-2021212121212</text></view>
+            </view>
+            <view class="text">
+                <view class="left"><text>当事人</text></view>
+                <view class="right"><text>张三</text></view>
+            </view>
+            <view class="text">
+                <view class="left"><text>当事人证件号</text></view>
+                <view class="right"><text>412314111987654322</text></view>
+            </view>
+            <view class="text">
+                <view class="left"><text>申请人</text></view>
+                <view class="right"><text>李四</text></view>
+            </view>
+            <view class="text">
+                <view class="left"><text>申请人证件号</text></view>
+                <view class="right"><text>567827651489119202</text></view>
+            </view>
+            <view class="text">
+                <view class="left"><text>案件类型</text></view>
+                <view class="right"><text>借贷</text></view>
+            </view>
+            <view class="text">
+                <view class="left"><text>司法机构类型</text></view>
+                <view class="right"><text>公证处</text></view>
+            </view>
+            <view class="text">
+                <view class="left"><text>司法机构名称</text></view>
+                <view class="right"><text>上海公证处</text></view>
+            </view>
+            <view class="text">
+                <view class="left"><text>委托律所</text></view>
+                <view class="right"><text>上海律所</text></view>
+            </view>
+            <view class="text">
+                <view class="left"><text>委托律师</text></view>
+                <view class="right"><text>王二</text></view>
+            </view>
+            <view class="text">
+                <view class="left"><text>涉及金额</text></view>
+                <view class="right"><text>1500.00</text></view>
+            </view>
+        </view>
+    </view>
+    <view class="btn-box">
+        <button bindtap="addPhoto">添加案材照片</button>
+    </view>
+</view>

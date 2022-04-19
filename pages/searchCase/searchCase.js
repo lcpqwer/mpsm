@@ -1,35 +1,51 @@
-// pages/login/login.js
+// pages/searchCase/searchCase.js
+const { endDate } = require('../../utils/util')
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-
+        endDate: endDate(),
+		stateList: [{ id: '', name: '全部状态' }, { id: '01', name: '已入库' }, { id: '02', name: '已出库' }, { id: '03', name: '已退回' }],
+		caseState: '',
+		date: '',
+        pickerIf: '0',
+        loadState: 'More'
     },
 
-    getPhoneNumber(e) {
-        if (e.detail.errMsg == 'getPhoneNumber:ok') {
-            console.log(e)
-            let sessionKey = wx.getStorageSync('session_key')
-            let encryptedData = e.detail.encryptedData;
-            let iv = e.detail.iv;
-            // let appId = app.appId;
-            let appId = 'wx90108155a2a9de5d'
-            const RdWXBizDataCrypt = require('../../utils/RdWXBizDataCrypt.js');
-            const pc = new RdWXBizDataCrypt(appId, sessionKey);
-            const data = pc.decryptData(encryptedData, iv);
-            console.log(data.phoneNumber); //当前手机号码
-            // console.log(data)
-            wx.setStorageSync('phone', data.phoneNumber)
-            this.login()
-        }
-    },
+    showPicker(){
+        console.log('1212')
+		this.setData({
+			pickerIf: '1'
+		})
+	},
 
-    smsLogin(){
-        wx.navigateTo({
-          url: '/pages/phone/phone',
-        })
+	hidePicker(){
+		this.setData({
+			pickerIf: '0'
+		})
+	},
+
+	changeDate(e){
+		console.log(e)
+		this.setData({
+			date: e.detail.date
+		})
+		this.hidePicker()
+	},
+
+	changeState(e) {
+		console.log(e)
+		let index = e.detail.value;
+		let caseState = this.data.stateList[index].id
+		if (caseState !== this.data.caseState) {
+			this.setData({ caseState })
+		}
+    },
+    
+    confirm(){
+
     },
 
     /**

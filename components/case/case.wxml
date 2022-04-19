@@ -1,16 +1,22 @@
 <!--components/case/case.wxml-->
 <view class="case-box" bindtap="detail">
     <view>
-        <text>2020年11月04日</text>
-        <text>来源：<text class="color1">某某某公司</text></text>
+        <text>2020年11月04日 19:10</text>
+        <text style="width: 250rpx;">来源：<text class="color1">某某某公司某某某公司</text></text>
     </view>
     <view>
-        <text>涉案人员：张三、李四、王二</text>
+        <text>涉案人员：张三</text>
         <text>材料数量：13份</text>
+        <text class="right">负责人：张三</text>
     </view>
     <view>
-        <text>案件ID：sadasdadadasdasd</text>
-        <text>负责人：张三</text>
+        <text class="case-id" style="width: auto;">案件ID：sadasdadadasdasd</text>
+        <text class="batch-no">批次号：sadasdadadasdasd</text>
     </view>
-    <text class="state state1">已入库</text>
+    <!-- <text class="state state1">待入库</text> -->
+    <text class="state state6">已入库</text>
+    <!-- <text class="state state2">已出库</text> -->
+    <!-- <text class="state state3">已退件</text> -->
+    <!-- <text class="state state4">部分出库</text> -->
+    <!-- <text class="state state5">部分退件</text> -->
 </view>

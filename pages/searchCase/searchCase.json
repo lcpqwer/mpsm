@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "case":"/components/case/case",
+    "picker-date": "/components/picker/picker"
+  },
+  "navigationBarTitleText": "案材匹配"
+}

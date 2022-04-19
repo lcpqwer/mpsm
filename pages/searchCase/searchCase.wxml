@@ -1,0 +1,50 @@
+<!--pages/searchCase/searchCase.wxml-->
+<view class="box">
+    <view class="s-hint">请查找绑定入库材料的关联案件信息</view>
+    <view class="search">
+        <view class="input">
+            <view><text class="iconfont icon-search-2-copy"></text></view>
+            <input type="text" placeholder="批次号/案管编号/当事人/平台名称" placeholder-style="font-size: 26rpx;" />
+        </view>
+        <view class="class">
+            <text>类目</text>
+            <text class="iconfont icon-xiala"></text>
+        </view>
+    </view>
+    <view class="list">
+        <label wx:for="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa">
+            <checkbox color="#1780F3"></checkbox>
+            <view class="item">
+                <view>
+                    <text>案件编号：</text>
+                    <text>asasasasasa</text>
+                </view>
+                <view>
+                    <text>批次号：</text>
+                    <text>asasasasasasas</text>
+                </view>
+                <view>
+                    <text>当事人：</text>
+                    <text>张三</text>
+                </view>
+                <view>
+                    <text>平台：</text>
+                    <text>某某平台</text>
+                </view>
+            </view>
+        </label>
+        <wxs src="/static/wxs/loadMore.wxs" module="loadMore"></wxs>
+            <view bindtap="nextPage" class="load-more">{{loadMore.text(loadState)}}</view>
+    </view>
+    <view class="bottom">
+        <view class="select">
+            <text>全选</text>
+            <text>取消全部</text>
+            <text>已选 <text class="num">321</text> 项</text>
+            <text>筛查结果 12345 个</text>
+        </view>
+        <view class="btn-box">
+            <button bindtap="confirm">确定</button>
+        </view>
+    </view>
+</view>

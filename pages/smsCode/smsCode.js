@@ -78,7 +78,7 @@ Page({
             smsCode: this.data.smsCode
         }
         console.log(data)
-        wx.navigateTo({
+        wx.reLaunch({
             url: '/pages/index/index',
         })
         return

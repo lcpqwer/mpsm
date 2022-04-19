@@ -5,7 +5,8 @@ Page({
      * 页面的初始数据
      */
     data: {
-        userInfo: wx.getStorageSync('USERINFO')
+        userInfo: wx.getStorageSync('USERINFO'),
+        accessToken: getApp().globalData.accessToken
     },
 
     // mark: 获取用户信息
@@ -34,8 +35,20 @@ Page({
 
     // mark: 上传记录
     next(e) {
-        let url = e.currentTarget.dataset.url
-        wx.navigateTo({ url })
+        if (this.data.accessToken){
+            let url = e.currentTarget.dataset.url
+            wx.navigateTo({ url })
+        }else {
+            wx.showToast({
+              title: '请先登录',
+            })
+            setTimeout(() => {
+                wx.navigateTo({
+                  url: '/pages/login/login'
+                })
+            }, 500);
+        }
+        
     },
 
     /**

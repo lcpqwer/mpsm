@@ -49,13 +49,13 @@
 }
 
 .ios .cancel {
-  margin: 0 auto 0 50rpx;
+  margin: 0 auto 0 20rpx;
   color: #959595;
 }
 
 .ios .confirm {
-  margin: 0 50rpx 0 auto;
-  color: #54bc67;
+  margin: 0 20rpx 0 40rpx;
+  color: #1780F3;
 }
 
 .ios .indicator {

@@ -1,0 +1,188 @@
+/* pages/searchCase/searchCase.wxss */
+.box {
+    width: 100%;
+    height: 100%;
+    padding-bottom: env(safe-area-inset-bottom);
+    box-sizing: border-box;
+    font-size: 28rpx;
+}
+
+.box>view {
+    padding: 0 40rpx;
+    box-sizing: border-box;
+}
+
+.s-hint {
+    line-height: 50rpx;
+    color: #A8A8A8;
+}
+
+.search {
+    display: flex;
+    width: 100%;
+}
+
+.search>view {
+    border-radius:  10rpx;
+    height: 60rpx;
+    border: 2rpx solid #1780F3;
+    color: #1780F3;
+}
+
+.input {
+    width: calc(100% - 180rpx);
+    display: flex;
+}
+
+.input>view {
+    width: 60rpx;
+    height: 60rpx;
+    display: flex;
+}
+
+.input .icon-search-2-copy {
+    font-size: 30rpx;
+    margin: auto;
+}
+
+.input input {
+    width: calc(100% - 60rpx);
+    padding-right: 15rpx;
+    height: 60rpx;
+}
+
+.class {
+    width: 150rpx;
+    margin-left: auto;
+    padding: 0 10rpx;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.class>text:first-child {
+    width: calc(100% - 40rpx);
+    text-align: center;
+    margin: auto 0;
+}
+
+.class .icon-xiala {
+    margin: auto 0 auto auto;
+}
+
+.list {
+    width: 100%;
+    height: calc(100% - 300rpx);
+    font-size: 24rpx;
+    overflow: auto;
+}
+
+.list>label {
+    display: flex;
+    margin-top: 20rpx;
+}
+
+.list checkbox {
+    transform: scale(0.6);
+    margin: auto auto auto 0;
+}
+
+.list .item {
+    width: calc(100% - 50rpx);
+    padding: 15rpx;
+    box-sizing: border-box;
+    background-color: #E8F3FF;
+}
+
+.item>view {
+    width: calc(50% - 6rpx);
+    display: inline-block;
+}
+
+.item>view>text {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.item>view:nth-child(odd) {
+    width: 50%;
+}
+
+.item>view:nth-child(even) {
+    margin-left: 20rpx;
+    width: calc(50% - 20rpx);
+}
+
+.item>view:nth-child(odd)>text:first-child {
+    width: 120rpx;
+}
+
+.item>view:nth-child(even)>text:first-child {
+    width: 96rpx;
+}
+
+.item>view:nth-child(odd)>text:last-child {
+    width: calc(100% - 120rpx);
+}
+
+.item>view:nth-child(even)>text:last-child {
+    width: calc(100% - 96rpx);
+}
+
+.item>view>text:last-child {
+    word-break: break-all;
+}
+
+.load-more {
+    font-size: 24rpx;
+    padding: 20rpx 0;
+}
+
+.bottom {
+    height: 190rpx;
+}
+
+.select {
+    line-height: 70rpx;
+    display: flex;
+    font-size: 26rpx;
+}
+
+.select>text:first-child {
+    color: #1780F3;
+}
+
+.select>text:nth-child(2),
+.select>text:nth-child(3) {
+    margin-left: 30rpx;
+}
+
+.select>text:nth-child(3) {
+    color: #C1C1C1;
+}
+
+.select>text:last-child {
+    margin-left: auto;
+    color: #C1C1C1;
+}
+
+.select .num {
+    color: #FF0000;
+}
+
+.btn-box {
+    width: 100%;
+    height: 120rpx;
+    display: flex;
+}
+
+.btn-box button {
+    width: 200rpx !important;
+    padding: 0;
+    color: #FFFFFF;
+    font-weight: normal;
+    margin: auto;
+    font-size: 28rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    background-color: #1780F3 !important;
+}

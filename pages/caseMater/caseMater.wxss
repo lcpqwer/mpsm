@@ -9,6 +9,17 @@
     height: 106rpx;
     background-color: #1780f3;
     display: flex;
+    position: relative;
+}
+
+.search>.login-mask {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 10;
 }
 
 .search>view {
@@ -18,16 +29,24 @@
 }
 
 .case {
-    width: 340rpx;
+    width: calc(100% - 150rpx);
     height: 64rpx;
-    margin: auto 0 auto auto;
+    margin: auto 20rpx;
     display: flex;
+    /* font-size: 24rpx; */
+    color: #707070;
+    box-sizing: border-box;
+}
+
+.case>text {
+    margin: auto 0;
 }
 
 .search-box {
-    width: 60rpx;
+    width: 64rpx;
     height: 100%;
     display: flex;
+    margin-left: auto;
 }
 
 .search-box>.iconfont {
@@ -39,7 +58,7 @@
 .case input {
     width: calc(100% - 60rpx);
     padding: 0 10rpx;
-    font-size: 28rpx;
+    font-size: 24rpx;
     height: 100%;
 }
 
@@ -47,56 +66,37 @@
     color: #707070;
 }
 
-.search>picker {
+.batch {
     height: 64rpx;
-    margin: auto 0 auto auto;
-}
-
-
-
-.picker-state {
-    width: 150rpx;
-}
-
-.date {
-    height: 64rpx;
-    margin: auto 0 auto auto;
-    width: 190rpx;
+    margin: auto 20rpx auto 0;
+    width: 130rpx;
     line-height: 64rpx;
     text-align: center;
     font-size: 24rpx;
     position: relative;
-    padding-right: 34rpx;
+    color: #0F79EE;
 }
 
-.picker {
+.state-box {
     width: 100%;
-    height: 64rpx;
-    border-radius: 10rpx;
-    background-color: #fff;
-    position: relative;
-    padding-right: 34rpx;
-    box-sizing: border-box;
-    line-height: 64rpx;
-    text-align: center;
+    height: 70rpx;
+    display: flex;
+}
+
+.state-box text {
     font-size: 24rpx;
+    color: #82BCFB;
+    margin: auto 0 auto 30rpx;
 }
 
-.icon-xiala {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 14rpx;
-    font-size: 20rpx;
-    color: #707070;
-}
-
-.search>picker:last-child {
-    margin-right: auto;
+.state-box text.select {
+    border-bottom: 4rpx solid #0F79EE;
+    color: #0F79EE;
+    font-weight: bold;
 }
 
 .list {
-    height: calc(100% - 106rpx);
+    height: calc(100% - 176rpx);
     width: 100%;
 }
 

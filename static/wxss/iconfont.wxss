@@ -1,16 +1,35 @@
 @font-face {
   font-family: "iconfont"; /* Project id 2552954 */
-  src: url('//at.alicdn.com/t/font_2552954_bmuje2suji5.woff2?t=1621581798920') format('woff2'),
-       url('//at.alicdn.com/t/font_2552954_bmuje2suji5.woff?t=1621581798920') format('woff'),
-       url('//at.alicdn.com/t/font_2552954_bmuje2suji5.ttf?t=1621581798920') format('truetype');
+  src: url('//at.alicdn.com/t/font_2552954_2u0sfnrpepj.woff2?t=1650273890147') format('woff2'),
+       url('//at.alicdn.com/t/font_2552954_2u0sfnrpepj.woff?t=1650273890147') format('woff'),
+       url('//at.alicdn.com/t/font_2552954_2u0sfnrpepj.ttf?t=1650273890147') format('truetype');
 }
 
 .iconfont {
   font-family: "iconfont" !important;
-  font-size: 16px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-copy:before {
+  content: "\e705";
+}
+
+.icon-cuo:before {
+  content: "\e63d";
+}
+
+.icon-cuowu:before {
+  content: "\e602";
+}
+
+.icon-shanchu:before {
+  content: "\e622";
+}
+
+.icon-add:before {
+  content: "\e603";
 }
 
 .icon-xiangji:before {

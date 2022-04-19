@@ -7,13 +7,14 @@ Page({
 	 */
 	data: {
 		search: '',
-		loginflag: false,
+		accessToken: getApp().globalData.accessToken,
 		state: 'More',
 		endDate: endDate(),
 		stateList: [{ id: '', name: '全部状态' }, { id: '01', name: '已入库' }, { id: '02', name: '已出库' }, { id: '03', name: '已退回' }],
 		caseState: '',
 		date: '',
-		pickerIf: '0'
+		pickerIf: '0',
+		stateIndex: '01'
 	},
 
 	login() {
@@ -22,9 +23,10 @@ Page({
 		})
 	},
 
-	search(e) {
-		console.log(e)
-		console.log(this.data.search)
+	toSearch(e) {
+		wx.navigateTo({
+		  url: '/pages/searchCase/searchCase',
+		})
 	},
 
 	showPicker(){
@@ -53,6 +55,15 @@ Page({
 		let caseState = this.data.stateList[index].id
 		if (caseState !== this.data.caseState) {
 			this.setData({ caseState })
+		}
+	},
+
+	selectState(e){
+		let stateIndex = e.currentTarget.dataset.index
+		if (stateIndex != this.data.stateIndex){
+			this.setData({
+				stateIndex
+			})
 		}
 	},
 

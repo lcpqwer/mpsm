@@ -5,58 +5,116 @@ Page({
      * 页面的初始数据
      */
     data: {
-        nav: '1',
+        nav: '0',
         state: '2',
-        type: 'detail',
         // 新增案件字段
         case: [{ id: '01', name: '借贷合同' }],
-        list: []
+        list: [1, 1, 1, 1, 1],
+        addMIF: false,  // 新增材料modal
+        minfoIF: false, // 材料信息modal
+        exIF: false,    // 出库modal
+        reIF: false,    // 退回modal
+        merIF: false,   // 商户modal
+        lawIF: false,   // 律师modal
+        recordIF: false, // 变更记录详情modal
     },
 
+    /**
+     * 改变页面轮播
+     * @param {Object} e 元素信息
+     */
+    changeSwiper(e) {
+        console.log(e)
+        let nav = e.detail.current
+        if (nav != this.data.nav) {
+            this.setData({ nav })
+        }
+    },
+
+    /**
+     * 改变页面轮播
+     * @param {Object} e 元素信息
+     */
     chooseNav(e) {
         let nav = e.currentTarget.dataset.nav;
         this.setData({ nav })
     },
 
-    changeState(e) {
-        let state = e.currentTarget.dataset.state;
-        this.setData({ state })
+    /**
+     * modal层显示
+     * @param {*} e 元素信息
+     */
+    showModal(e) {
+        let modalId = e.currentTarget.dataset.modalid
+        this.setData({ [modalId]: true })
     },
 
-    update() {
-
+    /**
+     * modal层隐藏
+     * @param {*} e 元素信息
+     */
+    hideModal(e) {
+        let modalId = e.currentTarget.dataset.modalid
+        this.setData({ [modalId]: false })
     },
 
-    upload() {
-
-    },
-
-    add() {
-        wx.showActionSheet({
-            itemList: ["拍照", "从手机相册选择", "从会话列表选择文件"],
+    /**
+     * 删除材料
+     * @param {*} e 元素信息 
+     */
+    deleteM(e) {
+        wx.showModal({
+            content: '确认删除当前材料类型吗？',
             success: res => {
                 console.log(res)
             }
         })
     },
 
-    next(e) {
-        let url = e.currentTarget.dataset.url;
-        wx.navigateTo({ url })
+    /**
+     * 禁止关闭modal冒泡
+     */
+    stop() { },
+
+
+    addM() {
+
+    },
+
+    /**
+     * 删除图片
+     * @param {Object} e 元素信息 
+     */
+    deleteP(e) {
+        wx.showModal({
+            content: '确认删除当前图片吗？',
+            success: res => {
+                console.log(res)
+            }
+        })
+    },
+
+    /**
+     * 新增图片
+     */
+    addP() {
+        wx.showActionSheet({
+            itemList: ["拍照", "从手机相册选择"],
+            success: res => {
+                console.log(res)
+                if (res.tapIndex === 0){
+                    // 拍照
+                }else if (res.tapIndex === 1){
+                    // 从手机相册选择
+                }
+            }
+        })
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function (options) {
-        if (options.type == 'add') {
-            this.setData({
-                type: options.type,
-                list: JSON.parse(decodeURI(options.list))
-            })
-        }
-
-        console.log(this.data.type)
+    onLoad: function () {
     },
 
     /**
