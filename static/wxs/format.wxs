@@ -1,0 +1,13 @@
+module.exports.formtDate = function (date, fmt) {
+    date = getDate(date)
+    var Y = date.getFullYear(),
+        M = date.getMonth() + 1,
+        D = date.getDate(),
+        h = date.getHours(),
+        m = date.getMinutes(),
+        s = date.getSeconds();
+    fmt = fmt.replace(getRegExp('Y'), Y).replace(getRegExp('M'), M).replace(getRegExp('D'), D)
+    fmt = fmt.replace(getRegExp('h'), h).replace(getRegExp('m'), m).replace(getRegExp('s'), s)
+    console.log('fmt', fmt)
+    return fmt
+}

@@ -5,7 +5,8 @@ Page({
      * 页面的初始数据
      */
     data: {
-        list: []
+        list: [],
+        oper: null
     },
 
     cameraDone() {
@@ -28,13 +29,13 @@ Page({
     error(e) {
         console.log(e.detail)
         wx.hideLoading({
-          success: (res) => {
-              wx.showToast({
-                title: '调取摄像头失败',
-                mask: true,
-                icon: "error"
-              })
-          },
+            success: (res) => {
+                wx.showToast({
+                    title: '调取摄像头失败',
+                    mask: true,
+                    icon: "error"
+                })
+            },
         })
     },
 
@@ -70,10 +71,22 @@ Page({
         })
     },
 
-    next(){
-        let list = encodeURI(JSON.stringify(this.data.list))
+    next() {
+        let { oper, list } = this.data, url
+        if (list.length > 0){
+            url = `/pages/confirmPhotos/confirmPhotos?list=${encodeURI(JSON.stringify(this.data.list))}`
+        }else if (oper == '00' || oper == '0') {
+            wx.showToast({
+              title: '请上传材料图片',
+              mask: true,
+              icon: 'none'
+            })
+            return
+        }else {
+            url = '/pages/caseMaterials/caseMaterials'
+        }
         wx.navigateTo({
-          url: `/pages/confirmPhotos/confirmPhotos?list=${list}`,
+            url
         })
     },
 
@@ -81,6 +94,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        this.setData({ oper: wx.getStorageSync('oper') })
         // wx.showLoading({
         //     title: '调取摄像头',
         //     mask: true

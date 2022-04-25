@@ -1,0 +1,27 @@
+<!--components/pickerDate/pickerDate.wxml-->
+<view class="birthBox" bindtap="cancel">
+    <view class="main" catchtap="noThing">
+        <view class="top">
+            <text class="cancel" catchtap="cancel">取消</text>
+            <text class="clear" catchtap="clear">清空</text>
+            <text class="confirm" catchtap="confirm">确认</text>
+        </view>
+        <picker-view value="{{value}}" indicator-style="height:30px;" indicator-class="indicator" mask-style="z-index: 0;" wx:if="{{years.length>0 && months.length>0 && days.length>0}}" bindchange="bindChange">
+            <picker-view-column class="first">
+                <view class="picker-item" wx:for="{{years}}" wx:key="{{index}}">
+                    <text>{{item}}年</text>
+                </view>
+            </picker-view-column>
+            <picker-view-column>
+                <view class="picker-item" wx:for="{{months}}" wx:key="{{index}}">
+                    <text>{{item}}月</text>
+                </view>
+            </picker-view-column>
+            <picker-view-column class="last">
+                <view class="picker-item" wx:for="{{days}}" wx:key="{{index}}">
+                    <text>{{item}}日</text>
+                </view>
+            </picker-view-column>
+        </picker-view>
+    </view>
+</view>

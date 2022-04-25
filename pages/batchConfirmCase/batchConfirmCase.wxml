@@ -1,2 +1,84 @@
 <!--pages/batchConfirmCase/batchConfirmCase.wxml-->
-<text>pages/batchConfirmCase/batchConfirmCase.wxml</text>
+<view class="box">
+    <view class="list">
+        <view wx:for="aaaaaaaaaaa">
+            <view class="item" bindtap="showModal" data-modalid="detailIF">
+                <view>
+                    <text>案件编号：</text>
+                    <text>asasasasasa</text>
+                </view>
+                <view>
+                    <text>批次号：</text>
+                    <text>asasasasasasas</text>
+                </view>
+                <view>
+                    <text>当事人：</text>
+                    <text>张三</text>
+                </view>
+                <view>
+                    <text>平台：</text>
+                    <text>某某平台</text>
+                </view>
+            </view>
+            <text class="iconfont icon-cuowu1"></text>
+        </view>
+    </view>
+    <view class="btn-box">
+        <button>下一步</button>
+        <text>全部删除</text>
+    </view>
+</view>
+<!-- 案件详情 -->
+<view class="mask" wx:if="{{detailIF}}" bindtap="hideModal" data-modalid="detailIF">
+    <view class="modal" catchtap="stop">
+        <view class="title">案件详情</view>
+        <view class="info">
+            <view>批次号</view>
+            <view>abc123456</view>
+        </view>
+        <view class="info">
+            <view>案管编号</view>
+            <view>abc123456</view>
+        </view>
+        <view class="info">
+            <view>当事人</view>
+            <view>张三</view>
+        </view>
+        <view class="info">
+            <view>当事人证件号</view>
+            <view>41108156489156132</view>
+        </view>
+        <view class="info">
+            <view>申请人</view>
+            <view>李四</view>
+        </view>
+        <view class="info">
+            <view>申请人证件号</view>
+            <view>41108156489156132</view>
+        </view>
+        <view class="info">
+            <view>案件类型</view>
+            <view>诉讼</view>
+        </view>
+        <view class="info">
+            <view>司法机构类型</view>
+            <view>法院</view>
+        </view>
+        <view class="info">
+            <view>司法机构名称</view>
+            <view>某某某法院</view>
+        </view>
+        <view class="info">
+            <view>委托律所</view>
+            <view>某某某律所</view>
+        </view>
+        <view class="info">
+            <view>委托律师</view>
+            <view>某某某律师</view>
+        </view>
+        <view class="info">
+            <view>涉及金额</view>
+            <view>300</view>
+        </view>
+    </view>
+</view>

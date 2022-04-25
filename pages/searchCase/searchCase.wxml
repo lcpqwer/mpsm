@@ -4,47 +4,65 @@
     <view class="search">
         <view class="input">
             <view><text class="iconfont icon-search-2-copy"></text></view>
-            <input type="text" placeholder="批次号/案管编号/当事人/平台名称" placeholder-style="font-size: 26rpx;" />
+            <input type="text" confirm-type="search" placeholder="批次号/案管编号/当事人/平台名称" placeholder-style="font-size: 26rpx;" value="{{keywords}}" bindconfirm="confirmInput" bindinput="inputVal" data-name="keywords" />
         </view>
-        <view class="class">
-            <text>类目</text>
-            <text class="iconfont icon-xiala"></text>
-        </view>
-    </view>
-    <view class="list">
-        <label wx:for="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa">
-            <checkbox color="#1780F3"></checkbox>
-            <view class="item">
-                <view>
-                    <text>案件编号：</text>
-                    <text>asasasasasa</text>
-                </view>
-                <view>
-                    <text>批次号：</text>
-                    <text>asasasasasasas</text>
-                </view>
-                <view>
-                    <text>当事人：</text>
-                    <text>张三</text>
-                </view>
-                <view>
-                    <text>平台：</text>
-                    <text>某某平台</text>
-                </view>
+        <picker range="{{categoryList}}" range-key="label" bindchange="changeType">
+            <view class="class">
+                <text>类目</text>
+                <text class="iconfont icon-xiala"></text>
             </view>
-        </label>
-        <wxs src="/static/wxs/loadMore.wxs" module="loadMore"></wxs>
-            <view bindtap="nextPage" class="load-more">{{loadMore.text(loadState)}}</view>
+        </picker>
     </view>
-    <view class="bottom">
-        <view class="select">
-            <text>全选</text>
-            <text>取消全部</text>
-            <text>已选 <text class="num">321</text> 项</text>
-            <text>筛查结果 12345 个</text>
+    <wxs module="m">
+        module.exports.strIndex = function (str, str1) {
+            if (str.indexOf(str1) == -1){
+                return false
+            }else {
+                return true
+            }
+        }
+    </wxs>
+    <block wx:if="{{listShow}}">
+        <scroll-view class="list" scroll-y bindscrolltolower="nextPage">
+            <block wx:for="{{list}}" wx:key="index">
+                <label bindtap="checkOne" data-caseid="{{item.caseId}}">
+                    <checkbox color="#1780F3" checked="{{(isAll == 1 && !m.strIndex(caseIds, item.caseId)) || (isAll == 0 && m.strIndex(caseIds, item.caseId))}}"></checkbox>
+                    <view class="item">
+                        <view>
+                            <text>案件编号：</text>
+                            <text bindlongtap="copyText" data-text="{{item.caseId}}">{{item.caseId}}</text>
+                        </view>
+                        <view>
+                            <text>批次号：</text>
+                            <text bindlongtap="copyText" data-text="{{item.batchNo}}">{{item.batchNo}}</text>
+                        </view>
+                        <view>
+                            <text>当事人：</text>
+                            <text>{{item.respondentName}}</text>
+                        </view>
+                        <view>
+                            <text>平台：</text>
+                            <text>{{item.merchantName}}</text>
+                        </view>
+                    </view>
+                </label>
+            </block>
+
+            <wxs src="/static/wxs/loadMore.wxs" module="loadMore"></wxs>
+            <view bindtap="nextPage" class="load-more" bindtap="nextPage">{{loadMore.text(loadState)}}</view>
+        </scroll-view>
+    </block>
+    <block wx:if="{{list.length > 0}}">
+        <view class="bottom">
+            <view class="select">
+                <text bindtap="changeCheckAll">全选</text>
+                <text bindtap="changeCheckAll">取消全部</text>
+                <text>已选 <text class="num">{{checkNum}}</text> 项</text>
+                <text>筛查结果 {{total}} 个</text>
+            </view>
+            <view class="btn-box">
+                <button bindtap="confirm">确定</button>
+            </view>
         </view>
-        <view class="btn-box">
-            <button bindtap="confirm">确定</button>
-        </view>
-    </view>
+    </block>
 </view>

@@ -2,28 +2,33 @@
 <view class="box">
     <!-- <picker mode="date" value="{{date?date:'2020-10-01'}}" start="2020-10-01" end="{{endDate}}" bindchange="bindDateChange"> -->
     <view class="picker" bindtap="showPicker">
-        <text class="nav">日期选择</text>
         <block>
-            <text class="date">{{date}}</text>
-            <text class="num"><text class="numText">{{num}}</text>条</text>
+            <text class="nav">日期选择</text>
+            <block wx:if="{{date}}">
+                <text class="date">{{date}}</text>
+                <text class="num"><text class="numText">{{num}}</text>条</text>
+            </block>
         </block>
         <text class="iconfont icon-jiantou"></text>
     </view>
     <!-- </picker> -->
+    <wxs module="m1" src="../../static/wxs/format.wxs"></wxs>
     <scroll-view class="main" scroll-y="{{true}}">
         <block wx:for="{{[1,1,1,1,1,1,1]}}">
             <view class="item">
                 <view class="title">
-                    <text class="time">2021年04月20日 13:20</text>
+                    <text class="time">{{m1.formtDate('2021-12-12 11:12', 'Y年M月D日 h:m')}}</text>
                     <text>当事人：张三、李四</text>
                 </view>
-                <block wx:for="{{[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]}}">
+                <block wx:for="aaaaaaaa">
                     <view class="img-box">
-
+                        <sImage src="../../static/image/demo.webp" mode="aspectFill" />
                     </view>
                 </block>
             </view>
         </block>
     </scroll-view>
 </view>
-<picker-date pickerIf="{{pickerIf}}" bind:cancel="hidePicker" bind:confirm="changeDate" />
+<view style="display: {{pickerIf?'':'none'}}">
+    <picker-date bind:cancel="hidePicker" bind:confirm="changeDate" bind:clear="clearDate" />
+</view>

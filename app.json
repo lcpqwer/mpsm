@@ -1,11 +1,12 @@
 {
     "pages": [
-        "pages/caseMaterials/caseMaterials",
-        "pages/oneConfirmCase/oneConfirmCase",
         "pages/index/index",
-        "pages/searchCase/searchCase",
-        "pages/batchConfirmCase/batchConfirmCase",
         "pages/uploadRecord/uploadRecord",
+        "pages/caseMaterials/caseMaterials",
+        "pages/batchCircul/batchCircul",
+        "pages/batchConfirmCase/batchConfirmCase",
+        "pages/oneConfirmCase/oneConfirmCase",
+        "pages/searchCase/searchCase",
         "pages/changeRecord/changeRecord",
         "pages/caseDetail/caseDetail",
         "pages/success/success",

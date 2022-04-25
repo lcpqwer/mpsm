@@ -5,8 +5,31 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        detailIF: false,    // 案件详情mdoal
     },
+
+    /**
+     * modal层显示
+     * @param {*} e 元素信息
+     */
+    showModal(e) {
+        let modalId = e.currentTarget.dataset.modalid
+        this.setData({ [modalId]: true })
+    },
+
+    /**
+     * modal层隐藏
+     * @param {*} e 元素信息
+     */
+    hideModal(e) {
+        let modalId = e.currentTarget.dataset.modalid
+        this.setData({ [modalId]: false })
+    },
+
+    /**
+     * 禁止关闭modal冒泡
+     */
+    stop() { },
 
     /**
      * 生命周期函数--监听页面加载

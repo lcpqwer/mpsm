@@ -19,10 +19,10 @@ page {
 }
 
 .load-more {
-  font-size: 30rpx;
+  font-size: 28rpx;
   text-align: center;
   color: #AAAAAA;
-  padding-bottom: 30rpx;
+  line-height: 60rpx;
   border: none !important;
   display: block !important;
 }

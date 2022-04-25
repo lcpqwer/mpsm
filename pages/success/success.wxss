@@ -18,7 +18,19 @@ page {
 }
 
 .time {
-    margin: 80rpx auto 0 auto;
+    margin: 0 auto;
     color: #969696;
     font-size: 30rpx;
+}
+
+button {
+    font-weight: normal !important;
+    background-color: #A4ADB3 !important;
+    color: #FFFFFF;
+    width: 200rpx !important;
+    font-size: 28rpx;
+    line-height: 60rpx !important;
+    height: 60rpx;
+    padding: 0 !important;
+    margin: 40rpx 0;
 }

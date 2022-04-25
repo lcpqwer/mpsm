@@ -1,5 +1,5 @@
 // pages/phone/phone.js
-// const { GET_SMS } = require('../../utils/api')
+const { SEND_SMS_CODE } = require('../../utils/api')
 // const Request = require('../../utils/request')
 Page({
 
@@ -32,25 +32,18 @@ Page({
             phone: this.data.phone
         }
         console.log(data)
-        wx.navigateTo({
-            url: '/pages/smsCode/smsCode',
-        })
-        return
         wx.showLoading({
             title: '验证码获取中',
         })
-        Request.post(GET_SMS, data, false, true).then(() => {
-            wx.hideLoading()
+        SEND_SMS_CODE(data).then(res => {
             wx.showToast({
-                title: '验证码获取成功',
+                title: '验证码已发送',
                 mask: true,
-                icon: 'success',
-                duration: 8000
+                icon: 'success'
             })
-            wx.setStorageSync('phone', this.data.phone)
             setTimeout(() => {
                 wx.navigateTo({
-                    url: '/pages/smsCode/smsCode',
+                    url: `/pages/smsCode/smsCode?phone=${data.phone}`,
                 })
             }, 500)
         }).catch(res => {
@@ -58,8 +51,7 @@ Page({
             wx.showToast({
                 title: res,
                 mask: true,
-                icon: 'none',
-                duration: 800
+                icon: 'none'
             })
         })
     },

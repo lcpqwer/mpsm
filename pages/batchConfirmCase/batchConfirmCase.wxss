@@ -1,1 +1,155 @@
 /* pages/batchConfirmCase/batchConfirmCase.wxss */
+.box {
+    width: 100%;
+    height: 100%;
+    padding-bottom: env(safe-area-inset-bottom);
+    box-sizing: border-box;
+    font-size: 28rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.box>view {
+    padding: 0 40rpx;
+    box-sizing: border-box;
+}
+
+.list {
+    width: 100%;
+    height: calc(100% - 120rpx);
+    overflow: auto;
+}
+
+.list>view {
+    display: flex;
+    margin-top: 40rpx;
+}
+
+.list .item {
+    width: calc(100% - 50rpx);
+    padding: 15rpx;
+    box-sizing: border-box;
+    background-color: #E8F3FF;
+    font-size: 24rpx;
+}
+
+.item>view {
+    width: calc(50% - 6rpx);
+    display: inline-block;
+}
+
+.item>view>text {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.item>view:nth-child(odd) {
+    width: 50%;
+}
+
+.item>view:nth-child(even) {
+    margin-left: 20rpx;
+    width: calc(50% - 20rpx);
+}
+
+.item>view:nth-child(odd)>text:first-child {
+    width: 120rpx;
+}
+
+.item>view:nth-child(even)>text:first-child {
+    width: 96rpx;
+}
+
+.item>view:nth-child(odd)>text:last-child {
+    width: calc(100% - 120rpx);
+}
+
+.item>view:nth-child(even)>text:last-child {
+    width: calc(100% - 96rpx);
+}
+
+.item>view>text:last-child {
+    word-break: break-all;
+}
+
+.icon-cuowu1 {
+    color: #FF0000;
+    margin: auto 0 auto auto;
+}
+
+.btn-box {
+    width: 100%;
+    height: 120rpx;
+    display: flex;
+    position: relative;
+}
+
+.btn-box button {
+    width: 300rpx !important;
+    padding: 0;
+    color: #FFFFFF;
+    font-weight: normal;
+    margin: auto;
+    font-size: 28rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    background-color: #1780F3 !important;
+}
+
+.btn-box>text {
+    line-height: 60rpx;
+    color: #FF0000;
+    position: absolute;
+    top: 50%;
+    right: 40rpx;
+    transform: translateY(-50%);
+}
+
+/* 案件详情 */
+.mask {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(149, 149, 149, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.mask>.modal {
+    background-color: #FFFFFF;
+    width: 670rpx;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+    border-radius: 10rpx;
+    padding: 10rpx 40rpx;
+    box-sizing: border-box;
+}
+
+.modal>view {
+    padding: 10rpx 0;
+    font-size: 28rpx;
+}
+
+.title {
+    text-align: center;
+    color: #1780F3;
+}
+
+.info {
+    padding: 10rpx 0;
+    display: flex;
+}
+
+.info>view:first-child {
+    width: 200rpx;
+}
+
+.info>view:last-child {
+    width: calc(100% - 200rpx);
+    word-break: break-all;
+    color: #9F9F9F;
+}

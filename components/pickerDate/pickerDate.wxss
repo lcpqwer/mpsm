@@ -1,0 +1,72 @@
+/* components/pickerDate/pickerDate.wxss */
+.birthBox {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    z-index: 1000;
+}
+
+.birthBox .main {
+    background-color: #fff;
+    margin-top: auto;
+    width: 100%;
+    box-sizing: border-box;
+    /* border-top-left-radius: 20rpx; */
+    /* border-top-right-radius: 20rpx; */
+}
+
+.birthBox .picker-item {
+    display: flex;
+}
+
+.birthBox .picker-item>text {
+    margin: auto;
+    font-size: 18px;
+}
+
+.birthBox picker-view {
+    height: calc(45px * 5) !important;
+    margin-bottom: env(safe-area-inset-bottom);
+    margin-top: env(safe-area-inset-bottom);
+    width: 718rpx;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.birthBox .top {
+    height: 70rpx;
+    display: flex;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.birthBox .top>text {
+    line-height: 70rpx
+}
+
+.birthBox .cancel {
+    margin: 0 auto 0 20rpx;
+    color: #959595;
+}
+
+.birthBox .confirm {
+    margin: 0 20rpx 0 40rpx;
+    color: #1780F3;
+}
+
+.birthBox .indicator {
+    background-color: #eeeeef;
+    z-index: 0;
+}
+
+.first .indicator {
+    border-top-left-radius: 15rpx;
+    border-bottom-left-radius: 15rpx;
+}
+
+.last .indicator {
+    border-top-right-radius: 15rpx;
+    border-bottom-right-radius: 15rpx;
+}

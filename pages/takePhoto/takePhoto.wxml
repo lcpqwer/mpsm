@@ -11,7 +11,7 @@
         <view style="width: {{list.length * 172}}rpx;height: 100%;">
             <block wx:for="{{list}}">
                 <view class="img-box" bindtap="preview" data-path="{{item}}">
-                    <sImage src="{{item}}" mode="aspectFit" />
+                    <sImage src="{{item}}" mode="aspectFill" />
                     <text class="iconfont icon-cuowu1" catchtap="del" data-index="{{index}}"></text>
                 </view>
             </block>

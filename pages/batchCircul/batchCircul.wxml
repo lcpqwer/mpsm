@@ -1,0 +1,75 @@
+<!--pages/batchCircul/batchCircul.wxml-->
+<view class="box">
+    <view class="search-box">
+        <picker range="{{stateList}}" range-key="label" bindchange="changePicker" data-pickerindex="stateIndex">
+            <view class="picker">
+                <view>{{stateList[stateIndex].label || '状态'}}</view>
+                <text class="iconfont icon-xiala"></text>
+            </view>
+        </picker>
+        <picker range="{{categoryList}}" range-key="label">
+            <view class="picker">
+                <view>类目</view>
+                <text class="iconfont icon-xiala"></text>
+            </view>
+        </picker>
+        <picker>
+            <view class="picker">
+                <view>商户</view>
+                <text class="iconfont icon-xiala"></text>
+            </view>
+        </picker>
+        <view class="input">
+            <text class="iconfont icon-search-2-copy"></text>
+            <input type="text" placeholder="批次编号" />
+            <text class="iconfont icon-cuo"></text>
+        </view>
+    </view>
+    <block wx:if="{{list.length > 0}}">
+        <view class="list">
+            <view class="head">
+                <view>
+                    <label>
+                        <checkbox></checkbox>
+                    </label>
+                </view>
+                <view><text>批次号</text></view>
+                <view><text>当事人</text></view>
+                <view><text>商户</text></view>
+                <view><text>材料数</text></view>
+                <view><text>状态</text></view>
+            </view>
+            <view wx:for="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa">
+                <label>
+                    <view>
+                        <checkbox></checkbox>
+                    </view>
+                    <view><text>a12121212121221121212121</text></view>
+                    <view><text>张三</text></view>
+                    <view><text>云证科技有限公司</text></view>
+                    <view><text>12</text></view>
+                    <view><text>入库</text></view>
+                </label>
+            </view>
+            <wxs src="/static/wxs/loadMore.wxs" module="loadMore"></wxs>
+            <view bindtap="nextPage" class="load-more">{{loadMore.text(loadState)}}</view>
+        </view>
+        <view class="bottom">
+            <view>
+                <button class="enter" bindtap="batchEnter">批量入库</button>
+                <button wx:if="{{stateIndex == 1 || stateIndex == 3}}" class="out" bindtap="batchOut">批量出库</button>
+                <button wx:if="{{stateIndex == 1}}" class="return" bindtap="batchRe">批量退件</button>
+                <text>已选 <text class="num">123</text> 项</text>
+            </view>
+            <view>
+                <text class="all">全选</text>
+                <text class="num1">取消全部</text>
+                <text>重置</text>
+                <text>筛选结果 <text class="num1">132</text> 个</text>
+            </view>
+        </view>
+    </block>
+    <block wx:else>
+        <view class="empty">暂无数据</view>
+    </block>
+</view>

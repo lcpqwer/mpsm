@@ -1,5 +1,5 @@
 {
   "usingComponents": {
-    "picker-date": "/components/picker/picker"
+    "picker-date": "/components/pickerDate/pickerDate"
   }
 }

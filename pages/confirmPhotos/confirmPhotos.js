@@ -48,7 +48,7 @@ Page({
 
     next(){
         wx.navigateTo({
-          url: `/pages/matchCase/matchCase?list=${encodeURI(JSON.stringify(this.data.list))}`,
+          url: "/pages/caseMaterials/caseMaterials",
         })
     },
 

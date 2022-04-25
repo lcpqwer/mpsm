@@ -1,22 +1,172 @@
 <!--pages/caseMaterials/caseMaterials.wxml-->
 <view class="box">
-    <view class="info">
-        <view>材料寄送商户</view>
-        <view class="picker">
-            <view>
-                <text>选择商户</text>
+    <block wx:if="{{oper == '01' || oper == '11' || oper == '21' || oper == '31' || oper == '41'}}">
+        <view class="title">
+            <view>材料寄送商户</view>
+            <view class="picker">
+                <text>商户</text>
             </view>
-            <text class="iconfont icon-jiantoudown"></text>
+            <!-- <view class="picker" bindtap="showModal" data-modalid="merIF">
+                <view>
+                    <text>选择商户</text>
+                </view>
+                <text class="iconfont icon-jiantoudown"></text>
+            </view> -->
         </view>
-    </view>
-    <view class="info">
-        <view>入库材料列表</view>
-        <view class="select">
-            <text>全选</text>
-            <text>取消全选</text>
-        </view>
+    </block>
+    <view class="title">
+        <wxs module="m1">
+            module.exports.operText = function (oper) {
+                if (oper == '12' || oper == '22'){
+                    return '出库'
+                }else if (oper == '13'){
+                    return '退回'
+                }else {
+                    return '入库'
+                }
+            }
+        </wxs>
+        <view>{{m1.operText(oper)}}材料列表</view>
+        <block wx:if="{{oper !== '13'}}">
+            <view class="select">
+                <text>全选</text>
+                <text>取消全选</text>
+            </view>
+        </block>
     </view>
     <view class="list">
-        
+        <block wx:if="{{oper == '13'}}">
+            <view class="item" wx:for="aaaa">
+                固定材料1
+            </view>
+        </block>
+        <block wx:else>
+            <view class="item" wx:for="aaaa">
+            <label>
+                <view>固定材料1</view>
+                <checkbox></checkbox>
+            </label>
+            <text class="iconfont icon-shanchu" bindtap="deleteM"></text>
+        </view>
+        <view class="add">
+            <view bindtap="showModal" data-modalid="addMIF">
+                <text>新增材料</text>
+                <text class="iconfont icon-add"></text>
+            </view>
+        </view>
+        </block>
+        <view class="list-bottom">
+            <view class="hint" wx:if="{{oper !== '13' || oper !== '00' || oper !== '10'}}">
+                注意：只需勾选本次{{m1.operText(oper)}}材料类型即可
+            </view>
+            <block wx:if="{{oper == '12' || oper == '22'}}">
+                <view class="nav">出库信息</view>
+                <view class="info">
+                    <text>收件律师</text>
+                    <view class="picker1" bindtap="showModal" data-modalid="lawIF">
+                        <text>某某律所</text>
+                        <text>某某律师</text>
+                        <text class="iconfont icon-jiantoudown"></text>
+                    </view>
+                </view>
+                <view class="info">
+                    <text>快递公司</text>
+                    <view class="picker2" bindtap="showModal" data-modalid="expIF">
+                        <text>选择快递</text>
+                        <text class="iconfont icon-jiantoudown"></text>
+                    </view>
+                    <view class="picker3">
+                        <input type="text" placeholder="快递单号" />
+                    </view>
+                    <text class="iconfont icon-xiangji"></text>
+                </view>
+            </block>
+            <block wx:elif="{{oper == '13'}}">
+                <view class="nav">退件信息</view>
+                <view class="info">
+                    <text>收件商户</text>
+                    <view class="picker1" bindtap="showModal" data-modalid="merIF">
+                        <text>某某商户</text>
+                        <text class="iconfont icon-jiantoudown"></text>
+                    </view>
+                </view>
+                <view class="info">
+                    <text>快递公司</text>
+                    <view class="picker2" bindtap="showModal" data-modalid="expIF">
+                        <text>选择快递</text>
+                        <text class="iconfont icon-jiantoudown"></text>
+                    </view>
+                    <view class="picker3">
+                        <input type="text" placeholder="快递单号" />
+                    </view>
+                    <text class="iconfont icon-xiangji"></text>
+                </view>
+            </block>
+        </view>
+    </view>
+    <view class="btn-box">
+        <button bindtap="success">绑定提交</button>
+    </view>
+</view>
+<!-- 添加材料 -->
+<view class="mask" wx:if="{{addMIF}}" bindtap="hideModal" data-modalid="addMIF">
+    <view class="modal modal1" catchtap="stop">
+        <view class="close">
+            <text class="iconfont icon-cuo" bindtap="hideModal" data-modalid="addMIF"></text>
+        </view>
+        <input type="text" placeholder="材料名称" />
+        <view class="hint">
+            <text>名称已存在</text>
+        </view>
+        <button class="btn1">新增</button>
+    </view>
+</view>
+<!-- 选择商户 -->
+<view class="mask" wx:if="{{merIF}}" bindtap="hideModal" data-modalid="merIF">
+    <view class="modal modal2" catchtap="stop">
+        <view class="close">
+            <text class="m-title">商户选择</text>
+            <text class="iconfont icon-cuo" bindtap="hideModal" data-modalid="merIF"></text>
+        </view>
+        <view class="search">
+            <input type="text" placeholder="商户查找" />
+            <view>
+                <text class="iconfont icon-search-2-copy"></text>
+            </view>
+        </view>
+        <picker-view>
+            <picker-view-column>
+                <view wx:for="aaaaaaaaaa">某某商户</view>
+            </picker-view-column>
+        </picker-view>
+        <view class="btn-box">
+            <button>确定</button>
+        </view>
+    </view>
+</view>
+<!-- 选择律师 -->
+<view class="mask" wx:if="{{lawIF}}" bindtap="hideModal" data-modalid="lawIF">
+    <view class="modal modal2" catchtap="stop">
+        <view class="close">
+            <text class="m-title">律师选择</text>
+            <text class="iconfont icon-cuo" bindtap="hideModal" data-modalid="lawIF"></text>
+        </view>
+        <view class="search">
+            <input type="text" placeholder="律师查找" />
+            <view>
+                <text class="iconfont icon-search-2-copy"></text>
+            </view>
+        </view>
+        <picker-view>
+            <picker-view-column>
+                <view wx:for="qq">某某律所</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view wx:for="qqqq">某某律师</view>
+            </picker-view-column>
+        </picker-view>
+        <view class="btn-box">
+            <button>确定</button>
+        </view>
     </view>
 </view>

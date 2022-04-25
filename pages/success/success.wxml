@@ -1,9 +1,10 @@
 <!--pages/success/success.wxml-->
-<block wx:if="{{state}}">
+<block wx:if="{{oper}}">
     <view class="img-box">
-        <sImage src="/static/image/{{state == '1'?'success1':state == '2'?'success2':'success3'}}.png"
+        <sImage src="/static/image/{{(oper == '12' || oper == '22')?'success2':oper == '13'?'success3':'success1'}}.png"
             mode="aspectFill" />
     </view>
-    <text class="text">{{state == '1'?'入库成功':state == '2'?'出库成功':'退回成功'}}</text>
-    <text class="time">2020年04月21日 13:44</text>
+    <text class="text">{{(oper == '00' || oper == '10')?'首次入库成功':(oper == '12' || oper == '22')?'出库成功':oper == '13'?'退回成功':'入库成功'}}</text>
+    <button bindtap="back">返回</button>
+    <text class="time">{{dateTime}}</text>
 </block>

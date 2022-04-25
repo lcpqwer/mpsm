@@ -1,12 +1,12 @@
 // pages/smsCode/smsCode.js
-// const { LOGIN } = require('../../utils/api')
-// const Request = require('../../utils/request')
+const { SEND_SMS_CODE, LOGIN } = require('../../utils/api')
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
+        phone: '',
         focus: true,
         smsCode: '',
         time: 60
@@ -42,28 +42,28 @@ Page({
      */
     sendSmsAgain() {
         let data = {
-            phone: wx.getStorageSync('phone')
+            phone: this.data.phone
         }
-        return
         wx.showLoading({
             title: '验证码获取中',
         })
-        Request.post(GET_SMS, data, false, true).then(() => {
-            wx.hideLoading()
+        SEND_SMS_CODE(data).then(res => {
             wx.showToast({
-                title: '验证码获取成功',
+                title: '验证码已发送',
                 mask: true,
-                icon: 'none',
-                duration: 8000
+                icon: 'success'
             })
-            this.onLoad()
+            setTimeout(() => {
+                wx.navigateTo({
+                    url: `/pages/smsCode/smsCode?phone=${data.phone}`,
+                })
+            }, 500)
         }).catch(res => {
             wx.hideLoading()
             wx.showToast({
                 title: res,
                 mask: true,
-                icon: 'none',
-                duration: 800
+                icon: 'none'
             })
         })
     },
@@ -74,34 +74,30 @@ Page({
     login() {
         let data = {
             type: 2,
-            phone: wx.getStorageSync('phone'),
+            phone: this.data.phone,
             smsCode: this.data.smsCode
         }
-        console.log(data)
-        wx.reLaunch({
-            url: '/pages/index/index',
-        })
-        return
         wx.showLoading({
             title: '登录中',
             mask: true
         })
-        Request.post(LOGIN, data, false, true).then(res => {
-            wx.hideLoading()
+        LOGIN(data).then(res => {
+            console.log(res)
             wx.setStorageSync('accessToken', res.accessToken)
+            getApp().globalData.accessToken = res.accessToken
             wx.showToast({
                 title: '登录成功',
                 mask: true,
                 duration: 500,
                 icon: 'none'
             })
-            setTimeout(() => {
-                wx.switchTab({
+            setTimeout(function(){
+                wx.reLaunch({
                     url: '/pages/index/index',
                 })
-            }, 500);
+            }, 1000)
         }).catch(res => {
-            wx.hideLoading()
+            this.setData({smsCode: ''})
             wx.showToast({
                 title: res,
                 mask: true,
@@ -115,6 +111,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        this.setData({ phone: options.phone })
         let _this = this
         _this.setData({
             time: 60

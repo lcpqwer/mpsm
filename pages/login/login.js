@@ -1,11 +1,12 @@
 // pages/login/login.js
+const { LOGIN } = require('../../utils/api')
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-
+        openid: wx.getStorageSync('openid')
     },
 
     getPhoneNumber(e) {
@@ -15,20 +16,51 @@ Page({
             let encryptedData = e.detail.encryptedData;
             let iv = e.detail.iv;
             // let appId = app.appId;
-            let appId = 'wx90108155a2a9de5d'
+            let appId = 'wx0d2c3b1ff2322946'
             const RdWXBizDataCrypt = require('../../utils/RdWXBizDataCrypt.js');
             const pc = new RdWXBizDataCrypt(appId, sessionKey);
             const data = pc.decryptData(encryptedData, iv);
             console.log(data.phoneNumber); //当前手机号码
             // console.log(data)
-            wx.setStorageSync('phone', data.phoneNumber)
+            this.setData({ phone: data.phoneNumber })
             this.login()
         }
     },
 
-    smsLogin(){
+    smsLogin() {
         wx.navigateTo({
-          url: '/pages/phone/phone',
+            url: '/pages/phone/phone',
+        })
+    },
+
+    login() {
+        let { openid, phone } = this.data
+        let data = {
+            type: 1,
+            openid, phone
+        }
+        LOGIN(data).then(res => {
+            console.log(res)
+            wx.setStorageSync('accessToken', res.accessToken)
+            getApp().globalData.accessToken = res.accessToken
+            wx.showToast({
+                title: '登录成功',
+                mask: true,
+                duration: 500,
+                icon: 'none'
+            })
+            setTimeout(function () {
+                wx.reLaunch({
+                    url: '/pages/index/index',
+                })
+            }, 1000)
+        }).catch(res => {
+            wx.showToast({
+                title: res,
+                mask: true,
+                icon: 'none',
+                duration: 800
+            })
         })
     },
 

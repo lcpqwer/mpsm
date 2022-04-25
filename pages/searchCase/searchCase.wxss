@@ -22,11 +22,16 @@
     width: 100%;
 }
 
-.search>view {
+.search>view,
+.class {
     border-radius:  10rpx;
     height: 60rpx;
     border: 2rpx solid #1780F3;
     color: #1780F3;
+}
+
+picker {
+    margin-left: auto;
 }
 
 .input {
@@ -74,11 +79,18 @@
     height: calc(100% - 300rpx);
     font-size: 24rpx;
     overflow: auto;
+    padding-top: 20rpx;
+    box-sizing: border-box;
 }
 
-.list>label {
+.list label {
+    width: 670rpx;
     display: flex;
-    margin-top: 20rpx;
+    margin: 20rpx auto 0 auto;
+}
+
+.list label:nth-child(1){
+    margin-top: 0;
 }
 
 .list checkbox {
@@ -129,7 +141,9 @@
 }
 
 .item>view>text:last-child {
-    word-break: break-all;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
 }
 
 .load-more {

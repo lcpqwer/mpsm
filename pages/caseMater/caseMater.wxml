@@ -7,7 +7,7 @@
                 <text class="iconfont icon-search-2-copy"></text>
             </view> 
         </view>
-        <view class="batch">批量流转</view>
+        <view class="batch" bindtap="batchCircul">批量流转</view>
         <block wx:if="{{!accessToken}}">
             <view class="login-mask" bindtap="login"></view>
         </block>
@@ -33,4 +33,3 @@
        <button class="login" bindtap="login">登录查看</button> 
     </block>
 </view>
-<picker-date pickerIf="{{pickerIf}}" bind:cancel="hidePicker" bind:confirm="changeDate" />

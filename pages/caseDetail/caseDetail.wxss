@@ -586,6 +586,7 @@ picker-view view {
     text-align: center;
 }
 
+/* 变更记录详情 */
 #record {
     padding: 20rpx;
     font-size: 28rpx;

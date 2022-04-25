@@ -109,4 +109,11 @@
     margin-top: 300rpx;
 }
 
-
+.load-more {
+    font-size: 28rpx;
+    text-align: center;
+    color: #AAAAAA;
+    line-height: 60rpx;
+    border: none !important;
+    display: block !important;
+}

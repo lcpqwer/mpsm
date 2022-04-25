@@ -3,12 +3,7 @@
     padding-top: 20rpx;
     height: 100%;
     box-sizing: border-box;
-}
-
-picker {
-    height: 90rpx;
-    padding: 0 20rpx;
-    background-color: #ffeabb;
+    padding-bottom: env(safe-area-inset-bottom);
 }
 
 .picker {
@@ -63,15 +58,13 @@ picker {
 }
 
 .img-box {
-    width: 135rpx;
-    height: 150rpx;
-    background-color: #e8e8e8;
-    border-radius: 10rpx;
+    width: 108rpx;
+    height: 130rpx;
     margin-top: 30rpx;
-    margin-right: 40rpx;
+    margin-right: 30rpx;
     display: inline-block;
 }
 
-.item>.img-box:nth-child(4n+1){
+.item>.img-box:nth-child(5n+1){
     margin-right: 0;
 }
